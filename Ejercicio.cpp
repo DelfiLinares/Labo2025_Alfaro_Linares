@@ -53,8 +53,9 @@ for (int i = 0; i< Empleados.size(); i++){
     }
 }
 int main(){
+ vector<empleado>MayorSueldo;
  vector<empleado>Empleados;
-vector<empleado> BajoSueldo;
+ vector<empleado> BajoSueldo;
  CargarDatos(Empleados);
  EmpleadoMayorSueldo(Empleados);
 }
