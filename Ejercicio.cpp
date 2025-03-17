@@ -31,7 +31,7 @@ void CargarDatos(vector<empleado>&Empleados){
         cin>>datos.fecha.dia;
         cout<<"Ingresar mes de nacimiento"<<endl;
         cin>>datos.fecha.mes;
-        cout<<"Ingresar año de nacimiento"<<endl;
+        cout<<"Ingresar aÃ±o de nacimiento"<<endl;
         cin>>datos.fecha.anio;
         cout<<"Ingresar sexo"<<endl;
         cin>>datos.sexo;
@@ -39,48 +39,22 @@ void CargarDatos(vector<empleado>&Empleados){
         cin>>datos.salario;
         Empleados.push_back(datos);
     }
-}
+}void EmpleadoMayorSueldo(vector<empleado>& Empleados, vector<empleado>& BajoSueldo) {
+    empleado MayorSueldo = Empleados[0];
+	empleado emp;
+for (int i = 0; i< Empleados.size(); i++){
 
-void EmpleadoConMayorSueldo(vector<empleado>&Empleados){
-vector<empleado>Menor={};
+ 	if (Empleados[i].salario<= 400000) {
+            	BajoSueldo.push_back(Empleados[i]);          }
 
-    for (int i = 0; i< Empleados.size(); i++)
-    {
-        empleado sal=Empleados[i];
-        empleado mayorsalario;
-        if (sal.salario<=400000)
-        {
-            Menor.push_back(sal);
+        if (Empleados[i].salario> MayorSueldo[i].salario) {
+            Empleados[i]= emp;
         }
-         
-
-            else if(Empleados[i].salario>Empleados[i+1].salario){
-                mayorsalario=Empleados[i];
-                cout<<"--- MAYOR----"<<endl;
-                cout<<mayorsalario.name<<endl;
-                cout<<mayorsalario.apellido<<endl;
-                cout<<mayorsalario.fecha.dia<<"/";
-                cout<<mayorsalario.fecha.mes<<"/";
-                cout<<mayorsalario.fecha.anio<<endl;
-                cout<<mayorsalario.sexo<<endl;
-                cout<<mayorsalario.salario<<endl;
-            }
-         for(int j=0;j<Menor.size()){
-            cout<<Menor[j].name<<endl;
-            cout<<Menor[j].apellido<<endl;
-            cout<<Menor[j].fecha.dia<<"/";
-            cout<<Menor[j].fecha.mes<<"/";
-            cout<<Menor[j].fecha.anio<<endl;
-            cout<<Menor[j].salario<<endl;
-            cout<<Menor[j].sexo<<endl;
-         }
     }
-    
-    
 }
-
 int main(){
-    vector<empleado>Empleados;
+ vector<empleado>Empleados;
+vector<empleado> BajoSueldo;
  CargarDatos(Empleados);
- EmpleadoConMayorSueldo(Empleados);
+ EmpleadoMayorSueldo(Empleados);
 }
