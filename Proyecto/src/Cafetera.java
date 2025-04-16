@@ -12,6 +12,8 @@
 //        agregarCafe(int cantidad): Añade café a la cafetera.
 
 
+import java.util.Scanner;
+
 public class Cafetera {
     private int cantmax;
     private int cantact;
@@ -25,8 +27,10 @@ public class Cafetera {
         this.cantact=cantmax;
     }
     public Cafetera(int cantact, int cantmax){
+        this.cantact=cantact;
+        this.cantmax=cantmax;
         if(cantact>cantmax){
-
+            this.cantact=1000;
         }
     }
     public int getCantmax(){
@@ -44,6 +48,60 @@ public class Cafetera {
         this.cantact=cantact;
     }
 
+    public void llenar (Cafetera cafeterita){
+        System.out.println("----------------------");
+        if(this.cantact<this.cantmax){
+            cantact=cantmax;
+        }
+        System.out.println("Se llenó la cafetera; Cant actual en la cafetera="+cantact);
+    }
+
+    public void llenarTaza (Cafetera cafeterita){
+        System.out.println("----------------------");
+        System.out.println("Indicar cuán llena quiere la taza(cc): ");
+        Scanner r = new Scanner(System.in);
+        int canttaza = r.nextInt();
+
+        if(canttaza>this.cantact){
+            System.out.println("Cafetera no tiene suficiente café");
+        }
+        else{
+            this.cantact=this.cantact-canttaza;
+            System.out.println("Se llenó la taza; Cant actual en la cafetera="+cantact);
+        }
+
+    }
 
 
+    public void vaciar (Cafetera cafeterita){
+        System.out.println("----------------------");
+        if(this.cantact!=0){
+            cantact=0;
+        }
+        System.out.println("Se vació la cafetera; Cant actual en la cafetera="+cantact);
+    }
+
+    public void agergarCafe (Cafetera cafeterita){
+        System.out.println("----------------------");
+        System.out.println("Indicar cuánto café quiere agregar: ");
+        Scanner r = new Scanner(System.in);
+        int cantCafeaux = r.nextInt();
+
+        if(this.cantact+cantCafeaux<=this.cantmax){
+            cantact+=cantCafeaux;
+            System.out.println("Se agregó café a la cafetera; Cant actual en la cafetera="+cantact);
+        }
+        else{
+            System.out.println("Cafetera no tiene suficiente capacidad");
+        }
+
+    }
+
+    public static void main (String [] args) {
+        Cafetera cafeterita = new Cafetera(1000, 1500);
+        cafeterita.llenar(cafeterita);
+        cafeterita.llenarTaza(cafeterita);
+        cafeterita.vaciar(cafeterita);
+        cafeterita.agergarCafe(cafeterita);
+    }
 }

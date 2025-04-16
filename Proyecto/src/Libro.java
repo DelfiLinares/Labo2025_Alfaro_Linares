@@ -33,6 +33,12 @@ public class Libro {
         this.fechaPublicacion= new Fecha();
     }
 
+    public Libro(String titulo, String editorial, Persona autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ISBN = ISBN;
+    }
+
     public String getTitulo(){
         return titulo;
     }
@@ -74,13 +80,20 @@ public class Libro {
         this.fechaPublicacion=fechaPublicacion;
     }
 
-    public void Mostrar(){
-
+    public void Mostrar(Libro librito){
+        System.out.println("El titulo es: " + this.titulo);
+        System.out.println("El autor del libro es: " + this.autor.getNombre());
+        System.out.println("La editorial es: " + this.editorial);
+        System.out.println("El ISBN es: " + this.ISBN);
+        System.out.println("La cantidad de págs es: " + this.paginas);
+        System.out.println("La fecha de publicacion es: " + this.fechaPublicacion.getDia()+"-"+this.fechaPublicacion.getMes()+"-"+this.fechaPublicacion.getAnio());
     }
 
 
     public static void main (String [] args) {
-
+        Libro librito = new Libro("pochochito story", "Patatas", new Persona(),2,300, new Fecha(12,2,2013));
+        librito.Mostrar(librito);
+        System.out.println(librito.fechaPublicacion.Menor(librito.fechaPublicacion));
     }
 }
 
