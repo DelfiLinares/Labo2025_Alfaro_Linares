@@ -10,6 +10,11 @@ public class Persona {
     this.edad=32;
     }
 
+    public Persona(String nombre){
+        this.nombre=nombre;
+
+    }
+
     public Persona(String nombre, String direccion, int edad){
         this.nombre=nombre;
         this.direccion=direccion;
