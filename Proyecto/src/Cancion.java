@@ -23,4 +23,9 @@ public class Cancion {
     public void setAutor(Persona autor){
         this.autor=autor;
     }
+
+    public void Mostrar (Cancion song){
+        System.out.println("Titulo: "+this.titulo);
+        System.out.println("Autor: "+this.autor.getNombre());
+    }
 }
