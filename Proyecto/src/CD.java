@@ -38,6 +38,13 @@ public class CD {
         Cancion aux=Tracklist.get(indice);
         return aux;
     }
+    public void eliminar (CD cd){
+        System.out.println("Ingresar indice: ");
+        Scanner r = new Scanner(System.in);
+        int indice= r.nextInt();
+       Tracklist.remove(Tracklist.get(indice));
+       System.out.println("Se elimino la canción");
+    }
 
     public void grabaCancion(int indice,Cancion nuevaCancion){
         System.out.println("----------------------");
@@ -48,7 +55,9 @@ public class CD {
     }
 
     public void agregar(Cancion cancionAgregada){
+
         this.Tracklist.add(cancionAgregada);
+        System.out.println("La cancion agregada es: "+ cancionAgregada.getTitulo());
     }
 
     public static void main (String [] args) {
@@ -58,13 +67,16 @@ public class CD {
         tracklist.add(new Cancion("Lolo",new Persona()));
         CD cd= new CD(tracklist);
         System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
+        System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
+        System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
         Cancion cancion1=cd.posicion(cd);
         cancion1.Mostrar(cancion1);
         int indice=1;
         Cancion nuevaCancion=new Cancion("Venus Fly Trap",new Persona("Marina"));
         Cancion cancionAgregada=new Cancion("Smells Like Teen Spirit",new Persona("Nirvana"));
         cd.grabaCancion(indice,nuevaCancion);
-
+        cd.agregar(cancionAgregada);
+        cd.eliminar(cd);
 
     }
 
