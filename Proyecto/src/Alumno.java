@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class AlumnoBasico {
+public class Alumno {
 
         //nombre, apellido, fechaNacimiento, listaDeNotas
         private String nombre;
@@ -9,7 +9,7 @@ public class AlumnoBasico {
         private ArrayList<Integer> notas;
 
 
-        public AlumnoBasico(String nombre, String apellido, Fecha fechaNacimiento, ArrayList<Integer>notas) {
+        public Alumno(String nombre, String apellido, Fecha fechaNacimiento, ArrayList<Integer>notas) {
             this.nombre=nombre;
             this.nombre=nombre;
             this.apellido=apellido;
@@ -17,7 +17,7 @@ public class AlumnoBasico {
             this.notas=notas;
         }
 
-        public AlumnoBasico(){
+        public Alumno(){
             this.nombre="Hector";
             this.apellido="Lesertesseur";
             this.fechaNacimiento=new Fecha(1,3,2024);
@@ -59,7 +59,7 @@ public class AlumnoBasico {
             this.notas = notas;
         }
 
-        public int mayorNota(AlumnoBasico alum){
+        public int mayorNota(Alumno alum){
             int mayor=notas.get(0);
             for(int i=0;i<this.notas.size();i++){;
                 if(mayor<notas.get(i)){
@@ -68,7 +68,7 @@ public class AlumnoBasico {
             }return mayor;
         }
 
-    public int menorNota(AlumnoBasico alum){
+    public int menorNota(Alumno alum){
         int menor=notas.get(0);
         for(int i=0;i<this.notas.size();i++){;
             if(menor>notas.get(i)){
@@ -87,7 +87,7 @@ public class AlumnoBasico {
             notas.add(6);
             notas.add(7);
             notas.add(1);
-            AlumnoBasico a1=new AlumnoBasico("Carlita","Wolf",new Fecha(1,2,2023),notas);
+            Alumno a1=new Alumno("Carlita","Wolf",new Fecha(1,2,2023),notas);
             System.out.println("Mayor nota de "+a1.getNombre() +" es: "+a1.mayorNota(a1));
             System.out.println("Menor nota de "+a1.getNombre() +" es: "+a1.menorNota(a1));
             a1.agregarNota(4);
