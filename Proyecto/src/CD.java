@@ -67,6 +67,8 @@ public class CD {
         tracklist.add(new Cancion("Lolo",new Persona()));
         CD cd= new CD(tracklist);
         System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
+        System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
+        System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
         Cancion cancion1=cd.posicion(cd);
         cancion1.Mostrar(cancion1);
         int indice=1;
