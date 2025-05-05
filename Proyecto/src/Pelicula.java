@@ -4,28 +4,34 @@ public class Pelicula {
     private String nombre;
     private String genero;
     private Hora tiempo;
-    private Persona director;
-    private Persona actor;
-    private ArrayList <String> Idiomas;
+    private ArrayList<Persona> Directores;
+    private ArrayList<Persona> Actores;
+    private ArrayList<String> Idiomas;
 
     public Pelicula(String nombre, String genero, Hora tiempo,
-                    Persona director, Persona actor, ArrayList <String> Idiomas){
+                    ArrayList<Persona> Directores, ArrayList<Persona> Actores, ArrayList<String> Idiomas) {
 
-            this.actor=actor;
-            this.director=director;
-            this.genero=genero;
-            this.Idiomas=Idiomas;
-            this.tiempo=tiempo;
-            this.nombre=nombre;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.tiempo = tiempo;
+        this.Directores = Directores;
+        this.Actores = Actores;
+        this.Idiomas = Idiomas;
+
     }
 
-    public Pelicula(){
-        this.nombre="Skibidi film";
-        this.genero="Terror";
-        this.tiempo=new Hora(2,4,6);
-        this.director= new Persona();
-        this.actor= new Persona("Pochochito", "New York 2564", 88);
-        this.Idiomas= new ArrayList<String>();
+    public Pelicula() {
+        this.nombre = "Skibidi film";
+        this.genero = "Terror";
+        this.tiempo = new Hora(2, 4, 6);
+        this.Directores = new ArrayList<Persona>();
+        Directores.add(new Persona("Juliana", "Jose Leon 333", 35));
+        this.Actores = new ArrayList<Persona>();
+        Actores.add(new Persona("Eduardo", "Jose Cabra 444", 40));
+        this.Idiomas = new ArrayList<String>();
+        Idiomas.add("Inglés");
+        Idiomas.add("Español");
+        Idiomas.add("Portugues");
     }
 
     public String getNombre() {
@@ -52,20 +58,20 @@ public class Pelicula {
         this.tiempo = tiempo;
     }
 
-    public Persona getDirector() {
-        return director;
+    public ArrayList<Persona> getDirectores() {
+        return Directores;
     }
 
-    public void setDirector(Persona director) {
-        this.director = director;
+    public void setDirectores(ArrayList<Persona> directores) {
+        Directores = directores;
     }
 
-    public Persona getActor() {
-        return actor;
+    public ArrayList<Persona> getActores() {
+        return Actores;
     }
 
-    public void setActor(Persona actor) {
-        this.actor = actor;
+    public void setActores(ArrayList<Persona> actores) {
+        Actores = actores;
     }
 
     public ArrayList<String> getIdiomas() {
@@ -75,8 +81,4 @@ public class Pelicula {
     public void setIdiomas(ArrayList<String> idiomas) {
         Idiomas = idiomas;
     }
-
-
-
-
 }
