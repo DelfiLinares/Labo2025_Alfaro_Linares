@@ -1,49 +1,72 @@
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Persona {
     private String nombre;
-    private String direccion;
-    private int edad;
+    private String apellido;
+    private int dni;
+    private LocalDate fechaNacimiento;
+    private LocalDate fechaIngreso;
 
+    public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento, LocalDate fechaIngreso) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.fechaNacimiento = fechaNacimiento;
+        this.fechaIngreso = fechaIngreso;
+    }
 
     public Persona() {
-    this.nombre="Marcelo";
-    this.direccion="Carlos Antonio Lopez 443";
-    this.edad=32;
+        this.nombre = "Mia";
+        this.apellido = "Pistacho";
+        this.dni = 43988965;
+        this.fechaNacimiento = LocalDate.of(1990, 8, 1);
+        this.fechaIngreso = LocalDate.of(2000,1,3);
     }
 
-    public Persona(String nombre, String direccion, int edad){
-        this.nombre=nombre;
-        this.direccion=direccion;
-        this.edad=edad;
-    }
-
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
-    public String getDireccion(){
-        return direccion;
-    }
-    public int getEdad(){
-        return edad;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setNombre(String nombre){
-        this.nombre=nombre;
-    }
-    public void setDireccion(String direccion){
-        this.direccion=direccion;
-    }
-    public void setEdad(int edad){
-        this.edad=edad;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void Imprimir(Persona personita){
-        System.out.println("Nombre: " + personita.nombre);
-        System.out.println("Direccion: " + personita.direccion);
-        System.out.println("Edad: " + personita.edad);
-    }
-    public static void main (String [] args) {
-        Persona personita = new Persona("Luciana", "Nueva York 333", 22);
-        personita.Imprimir(personita);
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public LocalDate getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public int antiguedad() {
+        return Period.between(fechaIngreso, LocalDate.now()).getYears();
+
+    }
 }
+
