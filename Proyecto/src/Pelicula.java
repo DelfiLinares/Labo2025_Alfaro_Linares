@@ -81,4 +81,15 @@ public class Pelicula {
     public void setIdiomas(ArrayList<String> idiomas) {
         Idiomas = idiomas;
     }
+
+    public ArrayList<Persona> actoresMayoresDeEdad(){
+        System.out.println("Mayores de edad-----");
+        ArrayList<Persona>mayores=new ArrayList<>();
+        for(Persona aux:this.Actores){
+            if(aux.getEdad()>=18){
+                mayores.add(aux);
+            }
+        }return mayores;
+    }
+
 }
