@@ -1,14 +1,15 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Pelicula {
     private String nombre;
     private String genero;
-    private Hora tiempo;
+    private LocalTime tiempo;
     private ArrayList<Persona> Directores;
     private ArrayList<Persona> Actores;
     private ArrayList<String> Idiomas;
 
-    public Pelicula(String nombre, String genero, Hora tiempo,
+    public Pelicula(String nombre, String genero, LocalTime tiempo,
                     ArrayList<Persona> Directores, ArrayList<Persona> Actores, ArrayList<String> Idiomas) {
 
         this.nombre = nombre;
@@ -23,7 +24,7 @@ public class Pelicula {
     public Pelicula() {
         this.nombre = "Skibidi film";
         this.genero = "Terror";
-        this.tiempo = new Hora(2, 4, 6);
+        this.tiempo =LocalTime.of(2, 4, 6);
         this.Directores = new ArrayList<Persona>();
         Directores.add(new Persona("Juliana", "Jose Leon 333", 35));
         this.Actores = new ArrayList<Persona>();
@@ -50,11 +51,11 @@ public class Pelicula {
         this.genero = genero;
     }
 
-    public Hora getTiempo() {
+    public LocalTime getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(Hora tiempo) {
+    public void setTiempo(LocalTime tiempo) {
         this.tiempo = tiempo;
     }
 
@@ -83,13 +84,25 @@ public class Pelicula {
     }
 
     public ArrayList<Persona> actoresMayoresDeEdad(){
-        System.out.println("Mayores de edad-----");
+        System.out.println("Mayores de edad");
         ArrayList<Persona>mayores=new ArrayList<>();
         for(Persona aux:this.Actores){
             if(aux.getEdad()>=18){
                 mayores.add(aux);
             }
         }return mayores;
+
+    }
+    public void imprimir(){
+        System.out.println(this.nombre);
+        System.out.println(this.genero);
+        System.out.println(this.tiempo);
+       for (Persona d:getDirectores()){
+           d.Imprimir();
+       }
+       for (Persona a:getActores()){
+           a.Imprimir();
+       }
     }
 
 }

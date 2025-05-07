@@ -1,10 +1,11 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BancoNacion {
     private String direccion;
     private boolean cajero;
     private boolean oficinas;
-    private ArrayList<Persona> empleados;
+    private ArrayList<PersonaBanco> empleados=new ArrayList<>();
 
     public BancoNacion(String direccion, boolean cajero, boolean oficinas) {
         this.direccion = direccion;
@@ -13,7 +14,7 @@ public class BancoNacion {
         this.empleados = new ArrayList<>();
     }
 
-    public void agregarTrabajador(Persona p) {
+    public void agregarTrabajador(PersonaBanco p) {
         empleados.add(p);
     }
 
@@ -21,16 +22,13 @@ public class BancoNacion {
         System.out.println("Cantidad de trabajadores: " + empleados.size());
     }
 
-    public Persona empleadoMayorAntiguedad() {
-        Persona mayor = null;
-
-        for (Persona p : empleados) {
-                if (p.getFechaIngreso().isBefore(mayor.getFechaIngreso())) {
-                    mayor = p;
-                }
-
+    public PersonaBanco empleadoMayorAntiguedad() {
+        PersonaBanco mayor = new PersonaBanco("Pa","Chorra",32323232, LocalDate.of(2005,5,7), LocalDate.now());
+        for (PersonaBanco p : empleados) {
+            if (p.getFechaIngreso().isBefore(mayor.getFechaIngreso())) {
+                mayor = p;
+            }
         }
-
         return mayor;
     }
 }

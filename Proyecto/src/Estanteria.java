@@ -1,11 +1,12 @@
 import java.lang.reflect.Array;
+import java.time.LocalTime;
 import java.util.ArrayList;
 public class Estanteria {
     private int cod;
     private ArrayList<Pelicula>Estante=new ArrayList<>();
 
     public Estanteria(){
-        this.cod=1;
+        this.cod=2;
         this.Estante=new ArrayList<Pelicula>();
         Estante.add(new Pelicula());
     }
@@ -32,10 +33,12 @@ public class Estanteria {
     public void agregar(Pelicula peli){
         this.Estante.add(peli);
         System.out.println("Se agregó "+ peli.getNombre()+" a la estantería número "+this.cod );
+        System.out.println("----------------");
     }
     public void borrar(Pelicula peli){
         this.Estante.remove(peli);
         System.out.println("Se eliminó "+ peli.getNombre()+" a la estantería número "+this.cod );
+        System.out.println("----------------");
     }
     public void modificar(Pelicula peli,Pelicula nuevapeli){
         for(Pelicula aux:this.Estante){
@@ -53,7 +56,7 @@ public class Estanteria {
                 System.out.println("No hay coincidencias con esa película");
             }
         }
-
+        System.out.println("----------------");
     }
 
 
