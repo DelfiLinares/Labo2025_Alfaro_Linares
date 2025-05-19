@@ -1,6 +1,6 @@
-import java.lang.reflect.Array;
+import videoclub.Persona;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class OperacionesBasicasArray {
     public static void main (String [] args) {
@@ -44,7 +44,7 @@ public class OperacionesBasicasArray {
         for (Persona personita:personas){
             int edad = personita.getEdad();
             if(edad>edadMax){
-                personita.Imprimir(personita);
+                personita.Imprimir();
             }
         }
     }

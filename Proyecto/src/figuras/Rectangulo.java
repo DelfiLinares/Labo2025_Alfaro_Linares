@@ -1,3 +1,5 @@
+package figuras;
+
 public class Rectangulo {
     private double base;
     private double altura;

@@ -1,4 +1,4 @@
-//Modelar una Cafetera con los siguientes atributos y métodos:
+package objetos;//Modelar una objetos.Cafetera con los siguientes atributos y métodos:
 //
 //    Atributos: cantidadMaxima, cantidadActual
 //    Métodos:
@@ -63,7 +63,7 @@ public class Cafetera {
         int canttaza = r.nextInt();
 
         if(canttaza>this.cantact){
-            System.out.println("Cafetera no tiene suficiente café");
+            System.out.println("objetos.Cafetera no tiene suficiente café");
         }
         else{
             this.cantact=this.cantact-canttaza;
@@ -92,7 +92,7 @@ public class Cafetera {
             System.out.println("Se agregó café a la cafetera; Cant actual en la cafetera="+cantact);
         }
         else{
-            System.out.println("Cafetera no tiene suficiente capacidad");
+            System.out.println("objetos.Cafetera no tiene suficiente capacidad");
         }
 
     }

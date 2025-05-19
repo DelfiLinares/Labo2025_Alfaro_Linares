@@ -1,3 +1,5 @@
+package vehiculos;
+
 public class Coche {
     private String marca;
     private String modelo;
@@ -18,8 +20,6 @@ public class Coche {
         this.color=color;
         this.velocidad=velocidad;
     }
-
-
 
     public String getMarca(){
         return marca;

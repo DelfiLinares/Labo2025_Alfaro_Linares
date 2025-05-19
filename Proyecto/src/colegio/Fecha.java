@@ -1,4 +1,4 @@
-
+package colegio;
 public class Fecha {
     public int dia;
     public int mes;

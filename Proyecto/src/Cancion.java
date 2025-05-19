@@ -1,3 +1,5 @@
+import videoclub.Persona;
+
 public class Cancion {
     private String titulo;
     private Persona autor;

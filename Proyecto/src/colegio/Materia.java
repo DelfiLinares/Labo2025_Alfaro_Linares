@@ -1,3 +1,5 @@
+package colegio;
+
 import java.util.ArrayList;
 
 public class Materia {
