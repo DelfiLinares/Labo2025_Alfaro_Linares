@@ -77,6 +77,19 @@ public class SistAlmuerzos {
         return (valor/precio)*100;
     }
 
+    public void mostrarPedidos(){
+        for(Pedido aux:this.pedidos){
+            System.out.println("Fecha del pedido: "+aux.getFecha());
+            System.out.println("Cliente: "+aux.getCliente().getNombre());
+            System.out.println("Estado: "+aux.getEstado());
+            System.out.println("Hora: "+aux.getHora());
+            for (Plato auxp: aux.getPlatos()){
+                System.out.println("Plato:"+auxp.getNombre());
+                System.out.println("Precio:"+auxp.getPrecio());
+            }
+        }
+    }
+
     public void platosDelDia(){
         Plato p1=new Plato();
         for(Pedido aux:this.pedidos){
@@ -124,7 +137,13 @@ public class SistAlmuerzos {
         menu.add(plato2);
         menu.add(plato3);
         menu.add(plato4);
-        menu.add(plato4);
+
+        SistAlmuerzos s1=new SistAlmuerzos(pediditos,menu);
+        s1.mostrarPedidos();
+
+
+
+
     }
 
 
