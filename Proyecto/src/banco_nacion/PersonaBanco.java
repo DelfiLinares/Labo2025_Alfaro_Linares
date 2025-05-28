@@ -1,6 +1,6 @@
 package banco_nacion;
 
-import videoclub.Persona;
+import general.Persona;
 
 import java.time.LocalDate;
 import java.time.Period;

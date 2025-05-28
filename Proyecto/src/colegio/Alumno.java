@@ -1,19 +1,23 @@
 package colegio;
 
-import videoclub.Persona;
+import general.Persona;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Alumno extends Persona {
+        private String division;
         private ArrayList<Integer> notas;
         private ArrayList<Materia>materia;
 
 
-        public Alumno(String nombre, String apellido, LocalDate fechaNacimiento, ArrayList<Integer>notas, ArrayList<Materia>materia) {
+        public Alumno(String nombre, String apellido, LocalDate fechaNacimiento, String division,ArrayList<Integer>notas, ArrayList<Materia>materia) {
            super(nombre, apellido, fechaNacimiento);
+            this.division=division;
             this.notas=notas;
             this.materia=materia;
+
+
     }
         public Alumno(String nombre, LocalDate fechaNacimiento, ArrayList<Integer>notas){
             super(nombre, fechaNacimiento);
@@ -22,6 +26,7 @@ public class Alumno extends Persona {
 
         public Alumno(){
          super();
+            this.division="2B";
             this.notas=new ArrayList<Integer>();
             this.materia=new ArrayList<Materia>();
             notas.add(3);
@@ -91,7 +96,7 @@ public class Alumno extends Persona {
                 ArrayList<Materia>materias=new ArrayList<Materia>();
                 materias.add(new Materia());
 
-                Alumno a1=new Alumno("Carlita","Wolf",LocalDate.of(1,2,2023), notas, materias);
+                Alumno a1=new Alumno("Carlita","Wolf",LocalDate.of(1,2,2023),"3A", notas, materias);
                 System.out.println("Mayor nota de "+a1.getNombre() +" es: "+a1.mayorNota(a1));
                 System.out.println("Menor nota de "+a1.getNombre() +" es: "+a1.menorNota(a1));
                 a1.agregarNota(4);

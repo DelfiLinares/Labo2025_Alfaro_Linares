@@ -1,5 +1,5 @@
 package videoclub;
-
+import general.Persona;
 import java.time.LocalTime;
 import java.util.ArrayList;
 

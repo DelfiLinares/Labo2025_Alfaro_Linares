@@ -1,4 +1,4 @@
-import videoclub.Persona;
+import general.Persona;
 
 public class Cancion {
     private String titulo;

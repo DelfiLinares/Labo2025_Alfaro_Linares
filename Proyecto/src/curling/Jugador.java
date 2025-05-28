@@ -1,6 +1,6 @@
 package curling;
 import colegio.Fecha;
-import videoclub.Persona;
+import general.Persona;
 
 import java.time.LocalDate;
 

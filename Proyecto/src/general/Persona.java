@@ -1,4 +1,4 @@
-package videoclub;
+package general;
 
 import java.time.LocalDate;
 
@@ -34,6 +34,12 @@ public class Persona {
         this.nombre=nombre;
         this.apellido=apellido;
         this.fNacimiento=f;
+    }
+
+
+    public Persona(String nombre, String apellido){
+        this.nombre=nombre;
+        this.apellido=apellido;
     }
 
     public Persona(String nombre, LocalDate f){

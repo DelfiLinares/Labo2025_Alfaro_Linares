@@ -1,4 +1,4 @@
-import videoclub.Persona;
+import general.Persona;
 
 import java.util.ArrayList;
 
