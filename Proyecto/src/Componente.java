@@ -1,10 +1,24 @@
-package sistema_almuerzos;
+package compus;
 
 public class Componente {
-    private String fabricante;
-    private int modelo;
-    private double precio;
-    private int stock;
+         String fabricante;
+         String modelo;
+         double precio;
+         int stock;
+
+        public Componente(String fabricante, String modelo, double precio, int stock) {
+            this.fabricante = fabricante;
+            this.modelo = modelo;
+            this.precio = precio;
+            this.stock = stock;
+        }
+
+        public Componente(){
+            this.fabricante= "Fabian";
+            this.modelo= "Mega";
+            this.precio= 10.3;
+            this.stock= 4;
+        }
 
     public String getFabricante() {
         return fabricante;
@@ -14,11 +28,11 @@ public class Componente {
         this.fabricante = fabricante;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
@@ -37,18 +51,5 @@ public class Componente {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
-    public Componente(String fabricante, int modelo, double precio, int stock) {
-        this.fabricante = fabricante;
-        this.modelo = modelo;
-        this.precio = precio;
-        this.stock = stock;
-    }
-
-    public Componente(){
-        this.fabricante="Vikitori";
-        this.modelo=500;
-        this.precio=5000.02;
-        this.stock=6;
-    }
 }
+

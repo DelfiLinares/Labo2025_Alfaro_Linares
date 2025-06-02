@@ -1,12 +1,12 @@
+package edificio;
 import java.util.ArrayList;
-
 public class SistemaEdificios {
     public static void main (String[] args) {
         SensorTemperatura sensorTemperatura = new SensorTemperatura("Conectado",84, 35,2019);
         SensorPresion sensorPresion = new SensorPresion("Desconectado", 70, 80, 2016, false);
         DetectorHumo detectorHumo=new DetectorHumo("Conectado", 0, 1, 2018,100);
 
-        ArrayList<Dispositivo> dispositivos=new ArrayList<>();
+        ArrayList<DispositivoSeguridad> dispositivos=new ArrayList<>();
         dispositivos.add(detectorHumo);
         dispositivos.add(sensorPresion);
         dispositivos.add(sensorTemperatura);
