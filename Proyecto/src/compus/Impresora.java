@@ -1,22 +1,22 @@
 package compus;
 
-public class Impresora extends Salida{
-    String metodo;
+public class Impresora extends Salida {
+    private MetodoImpresion metodoImpresion;
 
-    public Impresora(String fabricante, int modelo, double precio, int stock, String puertos, String metodo){
-        super(fabricante, modelo, precio, stock, puertos);
-        this.metodo=metodo;
+    public Impresora(String fabricante, String modelo, double precio, int stock, String puerto, MetodoImpresion metodoImpresion) {
+        super(fabricante, modelo, precio, stock, puerto);
+        this.metodoImpresion = metodoImpresion;
     }
     public Impresora(){
         super();
-        this.metodo="Láser";
+        this.metodoImpresion=MetodoImpresion.Laser;
     }
 
-    public String getMetodo() {
-        return metodo;
+    public MetodoImpresion getMetodoImpresion() {
+        return metodoImpresion;
     }
 
-    public void setMetodo(String metodo) {
-        this.metodo = metodo;
+    public void setMetodoImpresion(MetodoImpresion metodoImpresion) {
+        this.metodoImpresion = metodoImpresion;
     }
 }

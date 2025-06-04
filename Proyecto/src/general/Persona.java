@@ -29,6 +29,12 @@ public class Persona {
         this.edad=edad;
         this.fNacimiento=f;
     }
+    public Persona(String nombre, String apellido, int dni,LocalDate f){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.dni=dni;
+        this.fNacimiento=f;
+    }
 
     public Persona(String nombre, String apellido, LocalDate f){
         this.nombre=nombre;
@@ -51,6 +57,12 @@ public class Persona {
             this.nombre=nombre;
             this.direccion=direccion;
             this.edad=edad;
+        }
+
+        public Persona(String nombre, int dni, String apellido){
+            this.nombre=nombre;
+            this.apellido=apellido;
+            this.dni=dni;
         }
 
         public String getNombre(){

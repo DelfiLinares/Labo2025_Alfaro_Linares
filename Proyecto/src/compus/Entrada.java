@@ -1,35 +1,32 @@
 package compus;
 
-public class Entrada extends Dispositivo{
-    private String conector;
-    private String puertos;
+public class Entrada extends Componente {
+        protected String tipoConector;
+        protected String puerto;
 
+        public Entrada(String fabricante, String modelo, double precio, int stock, String tipoConector, String puerto) {
+            super(fabricante, modelo, precio, stock);
+            this.tipoConector = tipoConector;
+            this.puerto = puerto;
+        }
+            public Entrada(){
+            super();
+        }
 
-    public Entrada(String fabricante, int modelo, double precio, int stock, String conector, String puertos) {
-        super(fabricante, modelo, precio, stock);
-        this.puertos=puertos;
-        this.conector=conector;
+    public String getTipoConector() {
+        return tipoConector;
     }
 
-    public Entrada(){
-        super();
-        this.puertos="USB";
-        this.conector="coco";
-    }
-    public String getConector() {
-        return conector;
+    public void setTipoConector(String tipoConector) {
+        this.tipoConector = tipoConector;
     }
 
-    public void setConector(String conector) {
-        this.conector = conector;
+    public String getPuerto() {
+        return puerto;
     }
 
-    public String getPuertos() {
-        return puertos;
+    public void setPuerto(String puerto) {
+        this.puerto = puerto;
     }
-
-    public void setPuertos(String puertos) {
-        this.puertos = puertos;
-    }
-
 }
+

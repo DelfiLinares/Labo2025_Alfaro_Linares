@@ -1,53 +1,32 @@
 package compus;
 
-import general.Persona;
-
 import java.time.LocalDate;
 
-public class Tarjeta extends MetodoPago{
-    double recargo=0.05;
-    int num;
-    Persona titular;
-    LocalDate vencimiento;
+public class Tarjeta {
+    private String numeroTarjeta;
+    private LocalDate vencimiento;
+    private int cvv;
+    private double recargo = 0.05;
 
-    public Tarjeta(String metodo, double recargo, int num, Persona titular, LocalDate vencimiento){
-        super(metodo);
-        this.recargo=recargo;
-        this.num=num;
-        this.titular=titular;
-        this.vencimiento=vencimiento;
-    }
-
-    public Tarjeta(){
-        super();
-        this.recargo=0.05;
-        this.num=141516272;
-        this.titular=new Persona("Martin","Alfaro");
-        this.vencimiento=LocalDate.of(2026,9,8);
-    }
-
-    public double getRecargo() {
-        return recargo;
-    }
-
-    public void setRecargo(double recargo) {
+    public Tarjeta(String numeroTarjeta, LocalDate vencimiento, int cvv, double recargo) {
+        this.numeroTarjeta = numeroTarjeta;
+        this.vencimiento = vencimiento;
+        this.cvv = cvv;
         this.recargo = recargo;
     }
-
-    public int getNum() {
-        return num;
+    public Tarjeta() {
+        this.numeroTarjeta = "";
+        this.vencimiento = LocalDate.of(2027,5,2);
+        this.cvv = 122;
+        this.recargo = 0.05;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
-    public Persona getTitular() {
-        return titular;
-    }
-
-    public void setTitular(Persona titular) {
-        this.titular = titular;
+    public void setNumeroTarjeta(String numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
     }
 
     public LocalDate getVencimiento() {
@@ -56,5 +35,19 @@ public class Tarjeta extends MetodoPago{
 
     public void setVencimiento(LocalDate vencimiento) {
         this.vencimiento = vencimiento;
+    }
+
+    public int getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
+    }
+    public double getRecargo() {
+        return recargo;
+    }
+    public void setRecargo(double recargo) {
+        this.recargo = recargo;
     }
 }

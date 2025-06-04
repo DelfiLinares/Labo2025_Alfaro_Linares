@@ -1,20 +1,20 @@
 package vehiculos;
-
+import enums.Color;
 public class Coche {
     private String marca;
     private String modelo;
-    private String color;
+    private Color color;
     private double velocidad;
 
 
     public Coche (){
         this.marca="Ford";
         this.modelo="Focus";
-        this.color="Azul";
+        this.color=Color.Rojo;
         this.velocidad=0;
     }
 
-    public Coche(String marca, String modelo, String color, double velocidad){
+    public Coche(String marca, String modelo, Color color, double velocidad){
         this.marca=marca;
         this.modelo=modelo;
         this.color=color;
@@ -27,7 +27,7 @@ public class Coche {
     public String getModelo(){
         return modelo;
     }
-    public String getColor(){
+    public Color getColor(){
         return color;
     }
     public double getVelocidad(){
@@ -41,7 +41,7 @@ public class Coche {
     public void setModelo(String modelo){
         this.modelo=modelo;
     }
-    public void setColor(String color){
+    public void setColor(Color color){
         this.color=color;
     }
     public void setVelocidad(double velocidad){
@@ -58,10 +58,12 @@ public class Coche {
         return velocidad;
     }
     public void Mostrar(Coche cochecito){
-        System.out.println("Velocidad: " + cochecito.velocidad);
+        System.out.println("COCHE  Marca:"+cochecito.marca);
+        System.out.println("Velocidad: "+cochecito.velocidad);
+        System.out.println("Color: "+cochecito.color+'-'+cochecito.color.getHexa());
     }
     public static void main (String [] args) {
-        Coche cochecito = new Coche("Chevrolet", "Onix", "Blanco", 0);
+        Coche cochecito = new Coche("Chevrolet", "Onix", Color.Rojo, 0);
         System.out.println("Velocidad A: " + cochecito.Acelerar());
         System.out.println("Velocidad F: " + cochecito.Frenar());
         cochecito.Mostrar(cochecito);

@@ -1,22 +1,22 @@
 package compus;
 
-public class Salida extends Dispositivo{
-    private String puertos;
+public class Salida extends Componente {
+    private String puerto;
 
-    public Salida(String fabricante, int modelo, double precio, int stock, String puertos){
+    public Salida(String fabricante, String modelo, double precio, int stock, String puerto) {
         super(fabricante, modelo, precio, stock);
-        this.puertos=puertos;
+        this.puerto = puerto;
     }
+
     public Salida(){
         super();
-        this.puertos="HDMI";
     }
 
-    public String getPuertos() {
-        return puertos;
+    public String getPuerto() {
+        return puerto;
     }
 
-    public void setPuertos(String puertos) {
-        this.puertos = puertos;
+    public void setPuerto(String puerto) {
+        this.puerto = puerto;
     }
 }
