@@ -1,21 +1,18 @@
-//Crear una clase llamada Libro con los siguientes atributos y métodos:
-//
-//    Atributos: título, autor (usar la clase Persona), ISBN, páginas, editorial, fechaPublicacion (usar la clase Fecha)
-//    Métodos:
-//        Mostrar la información del libro
-//        Comparar si la fecha de publicación es anterior a otro libro dado
-//        3 constructores distintos a elección
-//        Getters y setters
+
+package biblioteca;
+import general.Persona;
+
+import java.time.LocalDate;
 
 public class Libro {
     private String titulo;
     private Persona autor;
     private int ISBN;
     private int paginas;
-    private String editorial;
-    private Fecha fechaPublicacion;
+    private Editorial editorial;
+    private LocalDate fechaPublicacion;
 
-    public Libro(String titulo, String editorial, Persona autor, int ISBN, int paginas, Fecha fechaPublicacion){
+    public Libro(String titulo, Editorial editorial, Persona autor, int ISBN, int paginas, LocalDate fechaPublicacion){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN=ISBN;
@@ -26,11 +23,11 @@ public class Libro {
 
     public Libro(){
         this.titulo="Harry Potter";
-        this.autor= new Persona ();
+        this.autor= new Persona ("Amanda","Lopez");
         this.ISBN=12;
         this.paginas=350;
-        this.editorial="Salamandra";
-        this.fechaPublicacion= new Fecha();
+        this.editorial=Editorial.Interzona;
+        this.fechaPublicacion= LocalDate.of(2025,1,25);
     }
 
     public Libro(String titulo, String editorial, Persona autor) {
@@ -54,10 +51,10 @@ public class Libro {
     public int getPaginas(){
         return paginas;
     }
-    public String getEditorial(){
+    public Editorial getEditorial(){
         return editorial;
     }
-    public Fecha getFechaPublicacion(){
+    public LocalDate getFechaPublicacion(){
         return fechaPublicacion;
     }
 
@@ -73,10 +70,10 @@ public class Libro {
     public void setPaginas(int paginas){
         this.paginas=paginas;
     }
-    public void setEditorial(String editorial){
+    public void setEditorial(Editorial editorial){
         this.editorial=editorial;
     }
-    public void setFechaPublicacion(Fecha fechaPublicacion){
+    public void setFechaPublicacion(LocalDate fechaPublicacion){
         this.fechaPublicacion=fechaPublicacion;
     }
 
@@ -86,14 +83,13 @@ public class Libro {
         System.out.println("La editorial es: " + this.editorial);
         System.out.println("El ISBN es: " + this.ISBN);
         System.out.println("La cantidad de págs es: " + this.paginas);
-        System.out.println("La fecha de publicacion es: " + this.fechaPublicacion.getDia()+"-"+this.fechaPublicacion.getMes()+"-"+this.fechaPublicacion.getAnio());
+        System.out.println("La fecha de publicacion es: " +this.getFechaPublicacion().getMonth()+"-"+this.getFechaPublicacion().getYear());
     }
 
 
     public static void main (String [] args) {
-        Libro librito = new Libro("pochochito story", "Patatas", new Persona(),2,300, new Fecha(12,2,2013));
+        Libro librito = new Libro("pochochito story", Editorial.Atlantida, new Persona(),2,300, LocalDate.of(2023,6,9));
         librito.Mostrar(librito);
-        System.out.println(librito.fechaPublicacion.Menor(librito.fechaPublicacion));
     }
 }
 
