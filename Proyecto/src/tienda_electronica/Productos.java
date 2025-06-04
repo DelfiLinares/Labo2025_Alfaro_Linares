@@ -4,6 +4,6 @@ public class Productos {
     String nombre;
     int stock;
     double precio;
-    String seccion
+    String seccion;
 
 }
