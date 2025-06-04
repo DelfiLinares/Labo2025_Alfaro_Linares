@@ -1,3 +1,5 @@
+package musica;
+import general.Persona;
 import java.util.ArrayList;
 import java.util.Scanner;
 

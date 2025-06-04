@@ -1,3 +1,4 @@
+package musica;
 import general.Persona;
 
 public class Cancion {
