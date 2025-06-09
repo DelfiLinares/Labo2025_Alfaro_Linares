@@ -1,6 +1,6 @@
 package compus;
 
-public class Componente {
+public abstract class Componente {
          String fabricante;
          String modelo;
          double precio;

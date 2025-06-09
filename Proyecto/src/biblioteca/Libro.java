@@ -6,13 +6,13 @@ import java.time.LocalDate;
 
 public class Libro {
     private String titulo;
-    private Persona autor;
+    private Autor autor;
     private int ISBN;
     private int paginas;
     private Editorial editorial;
     private LocalDate fechaPublicacion;
 
-    public Libro(String titulo, Editorial editorial, Persona autor, int ISBN, int paginas, LocalDate fechaPublicacion){
+    public Libro(String titulo, Editorial editorial, Autor autor, int ISBN, int paginas, LocalDate fechaPublicacion){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN=ISBN;
@@ -23,14 +23,14 @@ public class Libro {
 
     public Libro(){
         this.titulo="Harry Potter";
-        this.autor= new Persona ("Amanda","Lopez");
+        this.autor= new Autor("Amanda","Lopez");
         this.ISBN=12;
         this.paginas=350;
         this.editorial=Editorial.Interzona;
         this.fechaPublicacion= LocalDate.of(2025,1,25);
     }
 
-    public Libro(String titulo, String editorial, Persona autor) {
+    public Libro(String titulo, String editorial, Autor autor) {
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
@@ -40,7 +40,7 @@ public class Libro {
         return titulo;
     }
 
-    public Persona getAutor(){
+    public Autor getAutor(){
         return autor;
     }
 
@@ -61,7 +61,7 @@ public class Libro {
     public void setTitulo(String titulo){
         this.titulo=titulo;
     }
-    public void setAutor(Persona autor){
+    public void setAutor(Autor autor){
         this.autor=autor;
     }
     public void setISBN(int ISBN){
@@ -88,7 +88,7 @@ public class Libro {
 
 
     public static void main (String [] args) {
-        Libro librito = new Libro("pochochito story", Editorial.Atlantida, new Persona(),2,300, LocalDate.of(2023,6,9));
+        Libro librito = new Libro("pochochito story", Editorial.Atlantida, new Autor("Allice", "Popo"),2,300, LocalDate.of(2023,6,9));
         librito.Mostrar(librito);
     }
 }

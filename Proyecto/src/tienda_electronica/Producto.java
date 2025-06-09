@@ -1,5 +1,7 @@
 package tienda_electronica;
 
+import java.util.ArrayList;
+
 public class Producto {
     String nombre;
     int stock;
@@ -52,7 +54,4 @@ public class Producto {
         this.seccion = seccion;
     }
 
-    public void agregar(Producto nuevo){
-
-    }
 }

@@ -2,7 +2,7 @@ package vehiculos;
 
 import java.time.LocalDate;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     String marca;
     String modelo;
     String color;

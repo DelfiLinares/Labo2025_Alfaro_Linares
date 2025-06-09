@@ -1,10 +1,10 @@
 package tienda_electronica;
 
 public class Televisores extends Producto{
-    String tecnologia;
+    Tecnologia tecnologia;
     String resolucionP;
 
-    public Televisores(String tecnologia, String nombre, int stock, double precio, Seccion seccion, String resolucionP) {
+    public Televisores(Tecnologia tecnologia, String nombre, int stock, double precio, Seccion seccion, String resolucionP) {
         super(nombre, stock, precio, seccion);
         this.tecnologia = tecnologia;
         this.resolucionP=resolucionP;
@@ -12,15 +12,15 @@ public class Televisores extends Producto{
 
     public Televisores() {
         super();
-        this.tecnologia = "ultraHd";
+        this.tecnologia = Tecnologia.CUATRO_K;
         this.resolucionP= "1280x720 píxeles";
     }
 
-    public String getTecnologia() {
+    public Tecnologia getTecnologia() {
         return tecnologia;
     }
 
-    public void setTecnologia(String tecnologia) {
+    public void setTecnologia(Tecnologia tecnologia) {
         this.tecnologia = tecnologia;
     }
 
@@ -31,4 +31,6 @@ public class Televisores extends Producto{
     public void setResolucionP(String resolucionP) {
         this.resolucionP = resolucionP;
     }
+
+
 }

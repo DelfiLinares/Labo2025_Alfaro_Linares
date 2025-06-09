@@ -1,6 +1,6 @@
 package compus;
 
-public class Salida extends Componente {
+public abstract class Salida extends Componente {
     private String puerto;
 
     public Salida(String fabricante, String modelo, double precio, int stock, String puerto) {

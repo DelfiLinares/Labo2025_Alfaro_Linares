@@ -2,7 +2,7 @@ package general;
 
 import java.time.LocalDate;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private int dni;
@@ -121,9 +121,6 @@ public class Persona {
             System.out.println("DNI: "+ dni);
             System.out.println("Fecha de Nacimiento: "+ fNacimiento);
         }
-        public static void main (String [] args) {
-            Persona personita = new Persona("Luciana", "Tedesco",12131415, "Nueva York 333", 22, LocalDate.of(16,8,2008));
-            personita.Imprimir();
-        }
+
 
     }

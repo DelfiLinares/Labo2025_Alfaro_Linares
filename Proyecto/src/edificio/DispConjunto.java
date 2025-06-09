@@ -26,7 +26,7 @@ public class DispConjunto extends DispositivoSeguridad{
         medidaT=medidaT/3;
         return medidaT;
     }
-    public void alarmaCompuesta(){
+    public void alarma(){
         if(medidaTotal()>getUmbralI()){
             System.out.println("Se activó la alarma compuesta");
             System.out.println("-----------------------------");

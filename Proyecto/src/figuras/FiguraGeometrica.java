@@ -1,6 +1,6 @@
 package figuras;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
     private double base;
     private double altura;
     private double radio;
@@ -18,14 +18,9 @@ public class FiguraGeometrica {
         this.radio=5;
     }
 
-    public double Area (double radio){
-        double resultado=0;
-        return resultado;
-    }
-    public double Perimetro (double radio){
-        double resultado=0;
-        return resultado;
-    }
+    public abstract double Area (double radio);
+
+    public abstract double Perimetro (double radio);
 
     public double getBase() {
         return base;

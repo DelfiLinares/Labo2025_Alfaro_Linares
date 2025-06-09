@@ -3,7 +3,7 @@ package compus;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Persona {
+public class Persona extends general.Persona{
     private String nombre;
     private String apellido;
     private int dni;

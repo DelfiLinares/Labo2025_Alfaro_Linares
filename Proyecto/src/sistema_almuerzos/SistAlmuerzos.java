@@ -125,9 +125,9 @@ public class SistAlmuerzos {
         platosPedido2.add(plato3);
         ArrayList<Plato>platosPedido3=new ArrayList<>();
         platosPedido3.add(plato4);
-        Pedido pedido1=new Pedido(LocalDate.now(),new Persona("Delfina","Linares"), LocalTime.of(12,20),"Preparando",platosPedido1);
-        Pedido pedido2=new Pedido(LocalDate.now(),new Profesor("Eugenio","Lesertesseur",10), LocalTime.of(15,40),"En camino",platosPedido2);
-        Pedido pedido3=new Pedido(LocalDate.of(2025,3,11),new Persona("Abrilsita","Tedesco"), LocalTime.of(22,13),"Entregado",platosPedido3);
+        Pedido pedido1=new Pedido(LocalDate.now(),new ClienteAlmuerzo("Delfina","Linares"), LocalTime.of(12,20),"Preparando",platosPedido1);
+        Pedido pedido2=new Pedido(LocalDate.now(),new ClienteAlmuerzo("Eugenio","Lesertesseur"), LocalTime.of(15,40),"En camino",platosPedido2);
+        Pedido pedido3=new Pedido(LocalDate.of(2025,3,11),new ClienteAlmuerzo("Abrilsita","Tedesco"), LocalTime.of(22,13),"Entregado",platosPedido3);
 
         pediditos.add(pedido1);
         pediditos.add(pedido2);

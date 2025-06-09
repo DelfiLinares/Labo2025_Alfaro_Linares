@@ -1,6 +1,6 @@
 package edificio;
 
-public class DispositivoSeguridad {
+public abstract class DispositivoSeguridad {
     private String estado;
     private int medida;
     private int umbralI;
@@ -67,10 +67,7 @@ public class DispositivoSeguridad {
         }
     }
 
-    public void alarma(){
-
-
-    }
+    abstract void alarma();
 
 
 }
