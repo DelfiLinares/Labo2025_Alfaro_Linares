@@ -52,7 +52,7 @@ public class Plataforma {
     public Plato mayorCantidadPasos(){
         for(Plato p: recetas){
 
-        }
+        }return
     }
 
     public void porTipo(String tipo){
