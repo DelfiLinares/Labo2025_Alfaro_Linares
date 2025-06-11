@@ -28,9 +28,9 @@ public class Pelicula {
         this.genero = "Terror";
         this.tiempo =LocalTime.of(2, 4, 6);
         this.Directores = new ArrayList<Persona>();
-        Directores.add(new Persona("Juliana", "Jose Leon 333", 35));
+        //Directores.add(new Persona("Juliana", "Jose Leon 333", 35));
         this.Actores = new ArrayList<Persona>();
-        Actores.add(new Persona("Eduardo", "Jose Cabra 444", 40));
+        //Actores.add(new Persona("Eduardo", "Jose Cabra 444", 40));
         this.Idiomas = new ArrayList<String>();
         Idiomas.add("Inglés");
         Idiomas.add("Español");

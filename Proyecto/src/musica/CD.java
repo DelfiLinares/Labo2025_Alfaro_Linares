@@ -12,10 +12,10 @@ public class CD {
 
     public CD(){
         this.Tracklist = new ArrayList<Cancion>();
-        Tracklist.add(new Cancion("Rape Me",new Persona("Nirvana")));
-        Tracklist.add(new Cancion("Serve The Servants",new Persona("Nirvana")));
-        Tracklist.add(new Cancion("Breed",new Persona("Nirvana")));
-        Tracklist.add(new Cancion("Heartshaped Box",new Persona("Nirvana")));
+        //Tracklist.add(new Cancion("Rape Me",new Persona("Nirvana")));
+      //  Tracklist.add(new Cancion("Serve The Servants",new Persona("Nirvana")));
+       // Tracklist.add(new Cancion("Breed",new Persona("Nirvana")));
+      //  Tracklist.add(new Cancion("Heartshaped Box",new Persona("Nirvana")));
     }
 
     public ArrayList<Cancion> getTracklist() {
@@ -64,9 +64,9 @@ public class CD {
 
     public static void main (String [] args) {
         ArrayList <Cancion> tracklist =new ArrayList<Cancion>();
-        tracklist.add(new Cancion("Lala",new Persona()));
-        tracklist.add(new Cancion("Lulu",new Persona()));
-        tracklist.add(new Cancion("Lolo",new Persona()));
+        //tracklist.add(new Cancion("Lala",new Persona()));
+        //tracklist.add(new Cancion("Lulu",new Persona()));
+        //tracklist.add(new Cancion("Lolo",new Persona()));
         CD cd= new CD(tracklist);
         System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
         System.out.println("Cantidad de canciones del CD= "+ cd.numeroCanciones(cd));
@@ -74,11 +74,11 @@ public class CD {
         Cancion cancion1=cd.posicion(cd);
         cancion1.Mostrar(cancion1);
         int indice=1;
-        Cancion nuevaCancion=new Cancion("Venus Fly Trap",new Persona("Marina"));
-        Cancion cancionAgregada=new Cancion("Smells Like Teen Spirit",new Persona("Nirvana"));
-        cd.grabaCancion(indice,nuevaCancion);
-        cd.agregar(cancionAgregada);
-        cd.eliminar(cd);
+       // Cancion nuevaCancion=new Cancion("Venus Fly Trap",new Persona("Marina"));
+        //Cancion cancionAgregada=new Cancion("Smells Like Teen Spirit",new Persona("Nirvana"));
+       // cd.grabaCancion(indice,nuevaCancion);
+       // cd.agregar(cancionAgregada);
+      //  cd.eliminar(cd);
 
     }
 

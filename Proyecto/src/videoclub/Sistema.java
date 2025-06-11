@@ -58,15 +58,15 @@ public class Sistema {
 
     public static void main (String [] args) {
         ArrayList<Persona> directores=new ArrayList<>();
-        directores.add(new Persona("James Francis Cameron","Canadá",70));
+      //  directores.add(new Persona("James Francis Cameron","Canadá",70));
         ArrayList<Persona>actores=new ArrayList<>();
-        actores.add(new Persona("Leonardo DiCaprio","USA",50));
+       // actores.add(new Persona("Leonardo DiCaprio","USA",50));
         ArrayList<String>idiomas=new ArrayList<>();
         idiomas.add("Inglés");
         Pelicula p1=new Pelicula("Titanic","Romance", LocalTime.of(2,30,45),directores, actores, idiomas);
 
         ArrayList<Persona>actores2=new ArrayList<>();
-        actores2.add(new Persona("Cynthia Erivo","UK",38));
+        //actores2.add(new Persona("Cynthia Erivo","UK",38));
         Pelicula p2=new Pelicula("Wicked","Musical",LocalTime.of(3,10,00),directores, actores2, idiomas);
 
 
