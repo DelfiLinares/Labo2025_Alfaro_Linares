@@ -50,9 +50,14 @@ public class Plataforma {
         }
     }
     public Plato mayorCantidadPasos(){
-        for(Plato p: recetas){
-
-        }return
+        int mayor=0;
+        Plato mayorcant=new Entrada();//temporalmente es una entrada
+        for(Plato p: recetas) {
+            if (p.getPasos().size() > mayor) {
+                mayor = p.getPasos().size();
+                mayorcant = p;
+            }
+        }return mayorcant;
     }
 
     public void porTipo(String tipo){
@@ -72,13 +77,15 @@ public class Plataforma {
     }
     public static void main(String[] args) {
         ArrayList<String>pasos=new ArrayList<>();
+        ArrayList<String>pasos2=new ArrayList<>();
         pasos.add("Paso 1");
         pasos.add("Paso 2");
         pasos.add("Paso 3");
-        pasos.add("Paso 5");
+        pasos.add("Paso 4");
+        pasos2.add("Paso 1");
         Entrada e=new Entrada("Rabas",Nivel.MEDIO, pasos, Temperatura.CALIENTE);
-        platoPrincipal pp =new platoPrincipal("Milanesa a caballo", Nivel.FACIL, pasos, LocalTime.of(0,30,32), 3);
-        Postre po=new Postre("Torta Oreo",Nivel.FACIL, pasos, -18, false);
+        platoPrincipal pp =new platoPrincipal("Milanesa a caballo", Nivel.FACIL, pasos2, LocalTime.of(0,30,32), 3);
+        Postre po=new Postre("Torta Oreo",Nivel.FACIL, pasos2, -18, false);
         ArrayList<Plato>recetas=new ArrayList<>();
         recetas.add(e);
         recetas.add(pp);
@@ -89,5 +96,6 @@ public class Plataforma {
         p1.dificultad(nivelazo);
         p1.porTipo("Postre");
         System.out.println("Cantidad de recetas:"+p1.cantidad());
+        System.out.println("El plato con mayor cantidad de pasos es: "+p1.mayorCantidadPasos().getNombre());
     }
 }
