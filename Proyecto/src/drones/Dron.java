@@ -5,24 +5,22 @@ import java.time.LocalDate;
 public abstract class Dron {
     private String modelo;
     private LocalDate fechaAdq;
-    private String nivelCarga;
+    private int nivelCarga;
     private int contador_id;
     private Estado estado;
     private int bateria;
-    private double latitudOrig=-34.573195;
-    private double longitudOrig=-58.504111;
+    private static double latitudOrig=-34.573195;
+    private static double longitudOrig=-58.504111;
     private double latitudDes;
     private double longitudDes;
 
-    public Dron(String modelo, LocalDate fechaAdq, String nivelCarga, int contador_id, Estado estado, int bateria, double longO, double longD, double latO, double latD) {
+    public Dron(String modelo, LocalDate fechaAdq, int nivelCarga, int contador_id, Estado estado, int bateria, double longD, double latD) {
         this.modelo = modelo;
         this.bateria = bateria;
         this.contador_id = contador_id;
         this.estado = estado;
         this.fechaAdq = fechaAdq;
         this.nivelCarga = nivelCarga;
-        this.latitudOrig=latO;
-        this.longitudOrig=longO;
         this.latitudDes=latD;
         this.longitudDes=longD;
     }
@@ -43,11 +41,11 @@ public abstract class Dron {
         this.fechaAdq = fechaAdq;
     }
 
-    public String getNivelCarga() {
+    public int getNivelCarga() {
         return nivelCarga;
     }
 
-    public void setNivelCarga(String nivelCarga) {
+    public void setNivelCarga(int nivelCarga) {
         this.nivelCarga = nivelCarga;
     }
 
@@ -73,6 +71,22 @@ public abstract class Dron {
 
     public void setBateria(int bateria) {
         this.bateria = bateria;
+    }
+
+    public double getLatitudDes() {
+        return latitudDes;
+    }
+
+    public void setLatitudDes(double latitudDes) {
+        this.latitudDes = latitudDes;
+    }
+
+    public double getLongitudDes() {
+        return longitudDes;
+    }
+
+    public void setLongitudDes(double longitudDes) {
+        this.longitudDes = longitudDes;
     }
 
     public void recargar(){

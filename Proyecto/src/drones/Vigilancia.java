@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class Vigilancia extends Dron {
     private int cantMemoria;
 
-    public Vigilancia(String modelo, LocalDate fechaAdq, String nivelCarga, int contador_id, Estado estado, int bateria, int cantMemoria, double longO, double latO, double longD, double latD) {
-        super(modelo, fechaAdq, nivelCarga, contador_id, estado, bateria, longO, latO, longD, latD);
+    public Vigilancia(String modelo, LocalDate fechaAdq, int nivelCarga, int contador_id, Estado estado, int bateria, int cantMemoria, double longD, double latD) {
+        super(modelo, fechaAdq, nivelCarga, contador_id, estado, bateria, longD, latD);
         this.cantMemoria = cantMemoria;
     }
 

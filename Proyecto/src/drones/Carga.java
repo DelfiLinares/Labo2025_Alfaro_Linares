@@ -7,8 +7,8 @@ public class Carga extends Dron{
     private int distancia;
     private boolean exito;
 
-    public Carga(int pesoCarga, int distancia, String modelo, LocalDate fechaAdq, String nivelCarga, int contador_id, Estado estado, int bateria, double longO, double latO, double longD, double latD, boolean exito){
-        super(modelo, fechaAdq, nivelCarga, contador_id, estado, bateria, longO, latO, longD, latD);
+    public Carga(int pesoCarga, int distancia, String modelo, LocalDate fechaAdq, int nivelCarga, int contador_id, Estado estado, int bateria, double longD, double latD, boolean exito){
+        super(modelo, fechaAdq, nivelCarga, contador_id, estado, bateria, longD, latD);
             this.pesoCarga=pesoCarga;
             this.distancia=distancia;
             this.exito=exito;
@@ -39,7 +39,8 @@ public class Carga extends Dron{
     }
     @Override
     public boolean capacidad(){
-        if(this.distancia<=30 && this.getBateria()>=48){
+        if(this.distancia<=30 && this.getBateria()>=50){
+            setBateria(this.getBateria()-50);
             return true;
         }
         else{
