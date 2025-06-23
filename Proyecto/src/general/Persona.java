@@ -17,7 +17,7 @@ public abstract class Persona {
         this.dni=46789768;
         this.direccion="Carlos Antonio Lopez 443";
         this.edad=32;
-        this.fNacimiento=LocalDate.of(9,4,1989);
+        this.fNacimiento=LocalDate.of(1989,4,1);
 
     }
 
