@@ -12,9 +12,17 @@ public class Gato extends Mascota{
             this.alegria=10;
         }
 
-        @Override
+    public int getAlegria() {
+        return alegria;
+    }
+
+    public void setAlegria(int alegria) {
+        this.alegria = alegria;
+    }
+
+    @Override
         public void saludo(Duenio d) {
-            if(d==this.getDuenio()){
+            if(d.getNombre().equals(this.getDuenio().getNombre()) && d.getApellido().equals(this.getDuenio().getApellido())){
                 for (int i=0; i<this.alegria;i++) {
                     System.out.println("miau");
                 }
@@ -25,8 +33,8 @@ public class Gato extends Mascota{
 
         @Override
         public void alimentar() {
-            this.alegria+=1;
-            System.out.println("Se alimentó al gato");
+            setAlegria(this.alegria+1);
+            System.out.println("Se alimentó a "+this.getNombre()+"// Nivel de alegría: "+this.alegria);
         }
     }
 

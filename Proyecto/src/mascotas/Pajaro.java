@@ -28,7 +28,7 @@ public class Pajaro extends Mascota{
 
     @Override
     public void saludo(Duenio d) {
-        if(d==this.getDuenio()){
+        if(d.getNombre().equals(this.getDuenio().getNombre()) && d.getApellido().equals(this.getDuenio().getApellido())){
             for(int i=0;i<this.alegria;i++) {
                 if (this.cantor) {
                     System.out.println("Gluuuuuuuu");
@@ -42,6 +42,7 @@ public class Pajaro extends Mascota{
 
     @Override
     public void alimentar() {
-        this.alegria+=1;
+        setAlegria(this.alegria+1);
+        System.out.println("Se alimentó a "+this.getNombre()+"// Nivel de alegría "+this.alegria);
     }
 }

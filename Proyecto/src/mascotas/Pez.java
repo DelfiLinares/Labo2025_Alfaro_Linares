@@ -20,19 +20,21 @@ public class Pez extends Mascota{
 
     @Override
     public void alimentar() {
-        this.vida+=1;
-        System.out.println("Se alimentó al pez");
+        setVida(this.vida+=1);
+        System.out.println("Se alimentó a "+this.getNombre());
+        System.out.println("Vida actual del pez: "+this.vida);
     }
 
 
     @Override
     public void saludo(Duenio d) {
-        if(d==getDuenio()){
-            this.vida-=1;
+        if(d.getNombre().equals(this.getDuenio().getNombre()) && d.getApellido().equals(this.getDuenio().getApellido())){
+            setVida(this.vida-1);
         }
         else{
             setVida(0);
         }
+        System.out.println("Vida actual del pez: "+this.vida);
     }
 
 }
