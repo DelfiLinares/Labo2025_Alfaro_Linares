@@ -2,11 +2,12 @@ package mascotas;
 
 public class Pajaro extends Mascota{
     private boolean cantor;
-    private String canto="pio, pio";
+    private int alegria;
 
-    public Pajaro(String nombre, Duenio duenio, boolean cantor, Animal tipo){
+    public Pajaro(String nombre, Duenio duenio, boolean cantor, Animal tipo, int alegria){
         super(nombre, duenio, tipo);
         this.cantor=cantor;
+        this.alegria=alegria;
     }
 
     public boolean isCantor() {
@@ -17,25 +18,30 @@ public class Pajaro extends Mascota{
         this.cantor = cantor;
     }
 
-    public String getCanto() {
-        return canto;
+    public int getAlegria() {
+        return alegria;
     }
 
-    public void setCanto(String canto) {
-        this.canto = canto;
+    public void setAlegria(int alegria) {
+        this.alegria = alegria;
     }
 
     @Override
-    public void saludo() {
-        if(this.cantor){
-            setCanto("chii, chii");
-            System.out.println(this.canto);
-        }
-        else{
-            System.out.println(this.canto);
+    public void saludo(Duenio d) {
+        if(d==this.getDuenio()){
+            for(int i=0;i<this.alegria;i++) {
+                if (this.cantor) {
+                    System.out.println("Gluuuuuuuu");
+                }
+                else{
+                    System.out.println("Pio");
+                }
+            }
         }
     }
-    public static void main(String[] args) {
-    Pajaro p=new Pajaro("Tobi", new Duenio(), true, Animal.PAJARO_C);
+
+    @Override
+    public void alimentar() {
+        this.alegria+=1;
     }
 }

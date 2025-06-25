@@ -3,8 +3,8 @@ package mascotas;
 import java.util.ArrayList;
 
 public enum Animal {
-    PERRO, GATO, PAJARO_C, PAJARO_NC;
-
+    PERRO, GATO, PAJARO, PEZ;
+/*
     public static class Alta extends Mascota {
         ArrayList<Mascota> mascotas;
 
@@ -43,5 +43,5 @@ public enum Animal {
         public void Saludar(Mascota m1, Duenio d1){
 
         }
-    }
+    }*/
 }
