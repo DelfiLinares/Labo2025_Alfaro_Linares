@@ -53,10 +53,10 @@ public abstract class Mascota {
     public abstract void saludo(Duenio d);
 
     public abstract void alimentar();
-
+/*
     public String clase(){
-            System.out.println(this.getTipo());
-    }
+            return this.getTipo();
+    }/*/
     public void saludoDuenio(Duenio d){
         saludo(d);
     }

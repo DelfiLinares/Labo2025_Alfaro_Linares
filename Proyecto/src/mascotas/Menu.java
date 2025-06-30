@@ -37,7 +37,7 @@ public class Menu {
         pz1.saludoDuenio(new Duenio("Cande","Malempre"));
         pz1.alimentar();
         pz1.saludoDuenio(new Duenio("Cande","Matambre"));
-        pz1.clase();;
+      /*  pz1.clase();*/
 
         p1.saludoDuenio(new Duenio("Delfi","Linares"));
         p1.alimentar();
