@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public abstract class Disenador extends general.Persona{
+public class Disenador extends general.Persona{
     private HashSet<Proyecto>proyectos;
     private double sueldo;
     private Comision comision;
@@ -14,7 +14,6 @@ public abstract class Disenador extends general.Persona{
         super(nom, apell, dni, fNacimiento);
         this.proyectos=proys;
         this.comision=com;
-        this.sueldo=this.saberSueldo();
     }
 
     public HashSet<Proyecto> getProyectos() {
@@ -26,7 +25,7 @@ public abstract class Disenador extends general.Persona{
     }
 
     public double getSueldo() {
-        return sueldo;
+        return this.saberSueldo();
     }
 
     public void setSueldo(double sueldo) {
@@ -51,6 +50,10 @@ public abstract class Disenador extends general.Persona{
         else{
             return "IT";
         }
+    }
+
+    public void agregarProyecto(Proyecto pNuevo){
+        this.proyectos.add(pNuevo);
     }
     public HashMap<Proyecto, Double> cobroPorProyecto(){
         HashMap<Proyecto, Double>proyectoXcobro=new HashMap<Proyecto,Double>();
@@ -81,10 +84,11 @@ public abstract class Disenador extends general.Persona{
     public int cantProyectos(){
         return this.proyectos.size();
     }
-/*
     public void detallesProyecto(){
         for(Map.Entry<Proyecto, Double>entrada :this.cobroPorProyecto().entrySet()){
-
+            Proyecto proy=entrada.getKey();
+            Double cobro=entrada.getValue();
+            System.out.println("Nombre:"+proy.getNombre()+" // Dinero Ganado:"+proy.getDineroGenerado()+" // Comisión: "+(cobro-cobroSinC(proy)));
         }
-    }*/
+    }
 }
