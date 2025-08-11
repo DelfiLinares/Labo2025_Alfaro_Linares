@@ -8,7 +8,6 @@ public class Registro {
         this.altura=a;
         this.peso=p;
     }
-
     public double getAltura() {
         return altura;
     }

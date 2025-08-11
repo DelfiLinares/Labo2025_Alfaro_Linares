@@ -78,7 +78,7 @@ public class Paciente extends Persona {
     }
     public static void main (String args[]) {
         HashMap<LocalDate,Registro>registroHashMap=new HashMap<>();
-        Paciente p=new Paciente("Delfi","Linares",LocalDate.of(2008,06,02), registroHashMap);
+        Paciente p=new Paciente("Delfina","Linares",LocalDate.of(2008,06,02), registroHashMap);
         p.registrar(1.60,62.3, LocalDate.of(2025,9,15));
         p.registrar(1.66,63.01, LocalDate.of(2025,10,16));
         p.segunFecha(LocalDate.of(2020,9,15));
