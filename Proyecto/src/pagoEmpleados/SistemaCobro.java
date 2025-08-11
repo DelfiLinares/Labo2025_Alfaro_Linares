@@ -22,6 +22,5 @@ public class SistemaCobro {
         System.out.println("Dinero que ganó en el proyecto "+p2.getNombre()+":$"+d1.cobroSinC(p2));
         d1.detallesProyecto();
 
-
     }
 }
