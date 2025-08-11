@@ -8,6 +8,7 @@ public class Proyecto {
 
     public Proyecto(String n, double dinero){
         this.nombre=n;
+
        this.dineroGenerado=dinero;
     }
 

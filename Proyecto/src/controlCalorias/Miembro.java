@@ -49,6 +49,7 @@ public class Miembro extends Persona {
         this.fechaNac = fechaNac;
     }
 
+
     public void platoComido(Miembro m, HashSet<Platos>platos, Platos p){
         for (Platos pAux:platos){
             if (familia.contains(m)){

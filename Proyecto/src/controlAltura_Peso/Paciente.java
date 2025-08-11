@@ -76,6 +76,7 @@ public class Paciente extends Persona {
             }
             return porcentaje;
     }
+
     public static void main (String args[]) {
         HashMap<LocalDate,Registro>registroHashMap=new HashMap<>();
         Paciente p=new Paciente("Delfina","Linares",LocalDate.of(2008,06,02), registroHashMap);

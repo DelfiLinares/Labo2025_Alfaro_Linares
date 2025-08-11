@@ -25,6 +25,7 @@ public class Platos {
         this.cantCalorias=280;
     }
 
+
     public String getNombre() {
         return nombre;
     }
