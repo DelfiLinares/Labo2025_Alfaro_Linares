@@ -44,7 +44,7 @@ public class Plataforma {
     public void dificultad(Nivel n){
         System.out.println("----Los platos con nivel:"+n.name());
         for(Plato p: recetas){
-            if (p.nivel.equals(n)){
+            if (p.getNivel().equals(n)){
                 System.out.println(p.getNombre());
             }
         }

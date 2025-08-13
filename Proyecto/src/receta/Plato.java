@@ -1,19 +1,25 @@
 package receta;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public abstract class Plato {
-    String nombre;
-    Nivel nivel;
-    ArrayList<String> pasos;
+    private String nombre;
+    private Nivel nivel;
+    private ArrayList<String> pasos;
 
+    /*Constructor para receta*/
     public Plato(String nombre, Nivel nivel,ArrayList<String> pasos){
         this.nombre=nombre;
         this.nivel=nivel;
         this.pasos=pasos;
     }
+    public Plato(String nombre){
+        this.nombre=nombre;
+    }
 
     public Plato(){
+        this.nombre="Ensalada de palta y kanikama";
         this.nombre="suchi";
         this.nivel=Nivel.AVANZADO;
         this.pasos=new ArrayList<>();

@@ -35,7 +35,7 @@ public class Postre extends Plato{
     }
     public void instrucciones(){
         System.out.println("Los pasos son...");
-        for(String aux: this.pasos){
+        for(String aux: this.getPasos()){
             System.out.println("Recordar mantener la cocina limpia y el horno al mínimo!");
             System.out.println(aux);
         }

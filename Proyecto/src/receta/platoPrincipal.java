@@ -37,7 +37,7 @@ public class platoPrincipal extends Plato{
     @Override
     public void instrucciones() {
         System.out.println("Esta receta tarda en cocinarse "+this.tiempoCoccion.toString()+". Los pasos son...");
-        for(String aux: this.pasos){
+        for(String aux: this.getPasos()){
             System.out.println(aux);
         }
     }

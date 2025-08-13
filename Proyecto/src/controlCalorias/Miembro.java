@@ -1,68 +1,51 @@
 package controlCalorias;
 
 import general.Persona;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 
 public class Miembro extends Persona {
-    private String nombree;
-    private LocalDate fechaNac;
-    private HashSet<Miembro>familia;
-    private int caloriasConsumidas = 0;
+    private int caloriasConsumidas;
+    private HashSet<PlatoCal>platos;
+    
 
-    public Miembro(String nombre, LocalDate f, HashSet<Miembro>familia, String nombree, LocalDate fechaNac){
+    public Miembro(String nombre, LocalDate f, HashSet<PlatoCal>platos){
         super(nombre,f);
-        this.familia=familia;
-        this.nombree=nombree;
-        this.fechaNac=fechaNac;
+        this.platos=platos;
+
     }
 
     public Miembro(){
         super();
+        this.platos=new HashSet<>();
+        this.agregarPlato(new PlatoCal("Ejemplo",new HashSet<>(),1000000000));
     }
 
-    public Miembro(String nombree, LocalDate fechaNac) {
+    public HashSet<PlatoCal> getPlatos() {
+        return platos;
     }
 
-    public HashSet<Miembro> getFamilia() {
-        return familia;
+    public void setPlato(HashSet<PlatoCal> Plato) {
+        this.platos = platos;
     }
 
-    public void setFamilia(HashSet<Miembro> familia) {
-        this.familia = familia;
+    public int getCaloriasConsumidas() {
+        return this.caloriasConsumidas;
     }
 
-    public String getNombree() {
-        return nombree;
-    }
-
-    public void setNombree(String nombree) {
-        this.nombree = nombree;
-    }
-
-    public LocalDate getFechaNac() {
-        return fechaNac;
-    }
-
-    public void setFechaNac(LocalDate fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setCaloriasConsumidas(int caloriasConsumidas) {
+        this.caloriasConsumidas = caloriasConsumidas;
     }
 
 
-    public void platoComido(Miembro m, HashSet<Platos>platos, Platos p){
-        for (Platos pAux:platos){
-            if (familia.contains(m)){
-                caloriasConsumidas+= pAux.getCantCalorias();
-            }
-        }
+    public int cantCalorias(){
+        int totalCals = 0;
+        for (PlatoCal pAux:this.platos){
+            totalCals+=pAux.getCantCalorias();
+        }return totalCals;
+    }
+    public void agregarPlato(PlatoCal pNuevo){
+        this.platos.add(pNuevo);
     }
 
-    public static void main (String args[]) {
-        HashSet<Miembro> familia = new HashSet<Miembro>();
-        Miembro m = new Miembro("Paola",LocalDate.of(1987,5,6));
-        familia.add(m);
-        Platos p = new Platos();
-        System.out.println("Ha consumido: " + m.caloriasConsumidas + " calorias.");
-    }
 }

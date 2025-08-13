@@ -29,14 +29,14 @@ public class Entrada extends Plato {
         Temperatura c=Temperatura.CALIENTE;
         System.out.println("Los pasos son...");
         if (this.temp.equals(f)){
-            for(String aux: this.pasos){
+            for(String aux: this.getPasos()){
                 System.out.println(aux);
             }
             System.out.println("Recuerde guardarlo en la heladera!");
         }
         if(this.temp.equals(c)){
             System.out.println("Recuerde prender el horno!");
-            for(String aux: this.pasos){
+            for(String aux: this.getPasos()){
                 System.out.println(aux);
             }
         }
