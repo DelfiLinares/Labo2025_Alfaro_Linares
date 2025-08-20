@@ -19,39 +19,23 @@ public class Mundo {
         this.continentes = continentes;
     }
 
- public int encontrarLugar(String cod) {
-        if(cod.charAt(1)=='C'){
-            for (Continente continente : continentes) {
-                if(continente.getCodigo().equals(cod)){
-                    return continente.getPoblacion();
-                }
-            }
-        }
-        for (Continente continente : continentes) {
-            if (continente.getCodigo()[]) {
-                return continente.poblacion();
-            } else {
-                /*
-                for (Pais pais : continente.getPaises()) {
-                    if (pais.getCodigo().equals(codigo)) {
-                        return pais;
-                    }
-                    for (Provincia provincia : pais.getProvincias()) {
-                        if (provincia.getCodigo().equals(codigo)) return provincia;
-                        for (Ciudad ciudad : provincia.getCiudades()) {
-                            if (ciudad.getCodigo().equals(codigo)) return ciudad;
-                            for (Barrio barrio : ciudad.getBarrios()) {
-                                if (barrio.getCodigo().equals(codigo)) return barrio;
-                            }
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-    }*/
+/* public int encontrarLugar(String cod) {
+     if (cod.charAt(1) == 'C') {
+         for (Continente continente : continentes) {
+             if (continente.getCodigo().equals(cod)) {
+                 return continente.getPoblacion();
+             }
+         }
+     }
+     for (Continente continente : continentes) {
+         if (continente.getCodigo() == cod) {
+             return continente.poblacion();
+         } else {
 
-
+         }
+     }
+ }
+*/
     public Continente continenteMasPoblado() {
         Continente max = null;
         int poblacionMax = -1;
@@ -60,7 +44,7 @@ public class Mundo {
             if (total > poblacionMax) {
                 poblacionMax = total;
                 max = cont;
-            }B21
+            }
         }
         return max;
     }
