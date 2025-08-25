@@ -45,82 +45,60 @@ public int poblacionPorCodigo(String codigo) {
             }
         }
     }
-    public Continente continenteMasPoblado() {
-        Continente max = null;
-        int poblacionMax = -1;
-        for (Continente cont : continentes) {
-            int total = poblacionContinente(cont);
-            if (total > poblacionMax) {
-                poblacionMax = total;
-                max = cont;
-            }
-        }
-        return max;
-    }
-
-
-    public Continente continenteMenosPoblado() {
-        Continente min = null;
-        int poblacionMin = -1;
-        for (Continente cont : continentes) {
-            int total = poblacionContinente(cont);
-            if (total < poblacionMin) {
-                poblacionMin = total;
-                min = cont;
-            }
-        }
-        return min;
-    }
-
-
     public Pais paisMasPoblado() {
-        Pais max = null;
-        int paisMax = -1;
-        for (Pais p : paises) {
-            int total = poblacionPais(p);
-            if (total > paisMax) {
-                paisMax = total;
-                max = p;
+    Pais max = null;
+    int mayor = -1;
+    for (Continente cont : continentes) {   
+        for (Pais p : cont.getPaises()) {     
+            int poblacion = p.poblacion();  
+            if (poblacion > mayor) {            
+                mayor = poblacion;                
+                max = p;                          
             }
         }
-        return max;
     }
+    return max;
+}
 
-
-    public Pais paisMenosPoblado() {
-        Pais min = null;
-        int paisMin = -1;
-        for (Pais p : paises) {
-            int total = poblacionPais(p);
-            if (total < paisMin) {
-                paisMin = total;
-                min = p;
+public Pais paisMenosPoblado() {
+    Pais min = null;
+    int menor = Integer.MAX_VALUE;  
+    for (Continente cont : continentes) {
+        for (Pais p : cont.getPaises()) {
+            int poblacion = p.poblacion();
+            if (poblacion < menor) {      
+                menor = poblacion;          
+                min = p;                          
             }
         }
-        return min;
     }
+    return min;
+}
 
-
-    private int poblacionContinente(Continente c) {
-        int total = 0;
-        for (Pais p : c.getPaises()) {
-            total += poblacionPais(p);
+public Continente continenteMasPoblado() {
+    Continente max = null;
+    int mayor = -1;
+    for (Continente c : continentes) {
+        int poblacion = c.poblacion();
+        if (poblacion > mayor) {
+            mayor = poblacion;
+            max = c;
         }
-        return total;
     }
-
-    private int poblacionPais(Pais p) {
-        int total = 0;
-        for (Provincia pr : p.getProvincias()) {
-            for (Ciudad ciu : pr.getCiudades()) {
-                for (Barrio b : ciu.getBarrios()) {
-                    total += b.getPoblacion();
-                }
-            }
+    return max;
+}
+public Continente continenteMenosPoblado() {
+    Continente min = null;
+    int menor = Integer.MAX_VALUE;
+    for (Continente c : continentes) {
+        int poblacion = c.poblacion();
+        if (poblacion < menor) {
+            menor = poblacion;
+            min = c;
         }
-        return total;
     }
-
+    return min;
+}
     public void mostrarInfo() {
         System.out.println("País más poblado: " + paisMasPoblado().getNombre());
         System.out.println("País menos poblado: " + paisMenosPoblado().getNombre());
