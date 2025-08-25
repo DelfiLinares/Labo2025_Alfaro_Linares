@@ -19,23 +19,32 @@ public class Mundo {
         this.continentes = continentes;
     }
 
-/* public int encontrarLugar(String cod) {
-     if (cod.charAt(1) == 'C') {
-         for (Continente continente : continentes) {
-             if (continente.getCodigo().equals(cod)) {
-                 return continente.getPoblacion();
-             }
-         }
-     }
-     for (Continente continente : continentes) {
-         if (continente.getCodigo() == cod) {
-             return continente.poblacion();
-         } else {
-
-         }
-     }
- }
-*/
+public int poblacionPorCodigo(String codigo) {
+    for (Continente cont : continentes) {
+        if (cont.getCodigo().equals(codigo)) {
+            return cont.poblacion(); // si es el continente, retorna su población
+        }
+        for (Pais p : cont.getPaises()) {
+            if (p.getCodigo().equals(codigo)) {
+                return p.poblacion(); // si es el país, retorna su población
+            }
+            for (Provincia pr : p.getProvincias()) {
+                if (pr.getCodigo().equals(codigo)) {
+                    return pr.poblacion(); // si es la provincia, retorna su población
+                }
+                for (Ciudad ciu : pr.getCiudades()) {
+                    if (ciu.getCodigo().equals(codigo)) {
+                        return ciu.poblacion(); // si es la ciudad, retorna su población
+                    }
+                    for (Barrio b : ciu.getBarrios()) {
+                        if (b.getCodigo().equals(codigo)) {
+                            return b.poblacion(); // si es el barrio, retorna su población
+                        }
+                    }
+                }
+            }
+        }
+    }
     public Continente continenteMasPoblado() {
         Continente max = null;
         int poblacionMax = -1;
