@@ -30,10 +30,15 @@ public class Libro {
         this.fechaPublicacion= LocalDate.of(2025,1,25);
     }
 
-    public Libro(String titulo, String editorial, Autor autor) {
+    public Libro(String titulo, Editorial editorial, Autor autor) {
         this.titulo = titulo;
         this.autor = autor;
-        this.ISBN = ISBN;
+        this.editorial=editorial;
+    }
+    public Libro(String titulo, Autor autor, int ISBN) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ISBN=ISBN;
     }
 
     public String getTitulo(){
