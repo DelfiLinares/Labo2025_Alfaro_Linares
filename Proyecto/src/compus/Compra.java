@@ -12,11 +12,13 @@ public class Compra {
     private Salida salida;
     private Entrada entrada;
 
-    public Compra(Cliente cliente, CPU cpu, double total, String pago) {
+    public Compra(Cliente cliente, CPU cpu, double total, String pago, ArrayList<Entrada>ent,ArrayList<Salida>sal) {
         this.cliente = cliente;
         this.cpu = cpu;
         this.total = total;
         this.pago = pago;
+        this.dispositivosEntrada=ent;
+        this.dispositivosSalida=sal;
     }
 
     public Compra() {

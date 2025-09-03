@@ -66,7 +66,7 @@ public class Edificio {
         this.sensorT = sensorT;
     }
 
-    public void control(){
+    public void controlGeneral(){
         System.out.println("Se inicó el control de dispositivos del edificio "+this.direccion);
         if(this.sensorP.controlEstado()&&this.sensorT.controlEstado()&&this.detectorH.controlEstado() ){
         this.sensorT.alarma();

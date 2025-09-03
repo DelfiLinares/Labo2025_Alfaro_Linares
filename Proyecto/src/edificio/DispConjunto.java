@@ -1,6 +1,7 @@
 
 package edificio;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class DispConjunto extends DispositivoSeguridad{
     ArrayList<DispositivoSeguridad>dispositivos;
