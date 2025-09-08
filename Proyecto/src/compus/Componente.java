@@ -20,6 +20,11 @@ public abstract class Componente {
             this.stock= 4;
         }
 
+    public Componente(String fabricante, String modelo) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+    }
+
     public String getFabricante() {
         return fabricante;
     }
