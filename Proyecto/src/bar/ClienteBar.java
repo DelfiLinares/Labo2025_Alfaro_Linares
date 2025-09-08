@@ -1,30 +1,32 @@
 package bar;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class ClienteBar extends general.Persona{
-    private ArrayList<Bebida>consumos;
+    private HashSet<Bebida> consumos;
     private int cantidad;
     private int cHidratacion;
 
-    public ClienteBar(String n, int dni, String a, ArrayList<Bebida>c){
+    public ClienteBar(String n, int dni, String a, HashSet<Bebida>c){
         super(n,dni,a);
         this.consumos=c;
         this.cantidad=0;
         this.cHidratacion=0;
     }
+
     public ClienteBar(){
         super();
-        this.consumos=new ArrayList<>();
+        this.consumos=new HashSet<>();
         this.cantidad=0;
         this.cHidratacion=0;
     }
 
-    public ArrayList<Bebida> getConsumos() {
+    public HashSet<Bebida> getConsumos() {
         return consumos;
     }
 
-    public void setConsumos(ArrayList<Bebida> consumos) {
+    public void setConsumos(HashSet<Bebida> consumos) {
         this.consumos = consumos;
     }
 
@@ -44,8 +46,8 @@ public class ClienteBar extends general.Persona{
         this.cHidratacion = cHidratacion;
     }
 
-    public ArrayList<String> bebidaYcantidad() {
-        ArrayList<String> nuevoConsumos = new ArrayList<>();
+    public HashSet<String> bebidaYcantidad() {
+        HashSet<String> nuevoConsumos = new HashSet<>();
         int n = 0;
         int az = 0;
         int al = 0;

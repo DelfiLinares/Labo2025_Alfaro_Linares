@@ -1,5 +1,10 @@
 package bar;
 
+import barJuego.Beneficio;
+import barJuego.beneficioAcumulable;
+import receta.Plato;
+
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Neutra extends Bebida{
@@ -27,4 +32,5 @@ public class Neutra extends Bebida{
     public String tipo() {
         return "Neutra";
     }
+
 }

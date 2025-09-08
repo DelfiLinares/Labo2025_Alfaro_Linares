@@ -1,19 +1,19 @@
 package bar;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Bar {
-    private ArrayList<ClienteBar>clientes;
+    private HashSet<ClienteBar>clientes;
 
-    public Bar(ArrayList<ClienteBar>clientes){
+    public Bar(HashSet<ClienteBar>clientes){
         this.clientes=clientes;
     }
 
-    public ArrayList<ClienteBar> getClientes() {
+    public HashSet<ClienteBar> getClientes() {
         return clientes;
     }
 
-    public void setClientes(ArrayList<ClienteBar> clientes) {
+    public void setClientes(HashSet<ClienteBar> clientes) {
         this.clientes = clientes;
     }
 
@@ -30,7 +30,7 @@ public class Bar {
 
     public static void main(String[] args) {
 
-        ArrayList<Bebida>consumos=new ArrayList<>();
+        HashSet<Bebida>consumos=new HashSet<>();
         Alcoholica alc= new Alcoholica("Vodka",9);
         Alcoholica alc2= new Alcoholica("Fernet",7);
         Azucarada az= new Azucarada("Jugo de manzana",7);
@@ -41,14 +41,14 @@ public class Bar {
         consumos.add(az);
         consumos.add(neu);
 
-        ArrayList<Bebida>consumos2=new ArrayList<>();
+        HashSet<Bebida>consumos2=new HashSet<>();
         consumos2.add(neu);
         consumos2.add(neu2);
 
         ClienteBar c1= new ClienteBar("Ama",26526552, "Lia", consumos);
         ClienteBar c2= new ClienteBar("Eu",12528952, "Ge", consumos2);
 
-        ArrayList<ClienteBar>clientes=new ArrayList<>();
+        HashSet<ClienteBar>clientes=new HashSet<>();
         clientes.add(c1);
         clientes.add(c2);
         Bar b1=new Bar(clientes);
