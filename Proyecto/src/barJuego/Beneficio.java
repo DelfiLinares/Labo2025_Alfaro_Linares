@@ -1,6 +1,6 @@
 package barJuego;
 
-public class Beneficio {
+public abstract class Beneficio {
     private String nombre;
     private String creador;
 
@@ -24,4 +24,5 @@ public class Beneficio {
     public void setCreador(String creador) {
         this.creador = creador;
     }
+    public abstract String tipo();
 }

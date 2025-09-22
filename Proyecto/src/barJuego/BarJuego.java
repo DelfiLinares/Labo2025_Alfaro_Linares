@@ -62,17 +62,13 @@ public class BarJuego {
     }
     public void agregarBeneficio(Beneficio beneficio){
         this.beneficiosimplementados.add(beneficio);
-        if(beneficio instanceof beneficioAcumulable){
+        if(beneficio.tipo().equals("Acumulable")){
             this.beneficiosacumulables.add(beneficio);
         }
     }
 
     public int cantidadBeneficiosTragos(){
-        int cantidad=0;
-        for(Beneficio aux: this.beneficiosimplementados){
-            if(aux instanceof BeneficioTrago){
-                cantidad+=1;
-            }
-        }return cantidad;
+        int cantidad=this.beneficiosimplementados.size()-this.beneficiosacumulables.size();
+        return cantidad;
     }
 }

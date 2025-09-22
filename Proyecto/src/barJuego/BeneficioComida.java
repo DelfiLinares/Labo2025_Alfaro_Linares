@@ -25,4 +25,8 @@ public class BeneficioComida extends Beneficio implements beneficioAcumulable {
     public int aplicarDescuentoExtra(){
         return 4500;
     }
+    @Override
+    public String tipo(){
+        return "Acumulable";
+    }
 }

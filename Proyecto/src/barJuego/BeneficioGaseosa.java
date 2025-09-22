@@ -25,4 +25,9 @@ public class BeneficioGaseosa extends Beneficio implements beneficioAcumulable {
     public int aplicarDescuentoExtra(){
         return 1000;
     }
+
+    @Override
+    public String tipo(){
+        return "Acumulable";
+    }
 }

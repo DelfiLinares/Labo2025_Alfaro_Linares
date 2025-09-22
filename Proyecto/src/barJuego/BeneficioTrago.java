@@ -19,4 +19,8 @@ public class BeneficioTrago extends Beneficio {
     public void setTragos(HashSet<Alcoholica> tragos) {
         this.tragos = tragos;
     }
+    @Override
+    public String tipo(){
+        return " No Acumulable";
+    }
 }
