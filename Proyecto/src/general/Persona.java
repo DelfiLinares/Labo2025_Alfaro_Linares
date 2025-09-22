@@ -21,7 +21,7 @@ public abstract class Persona {
 
     }
 
-
+    // CONSTRUCTORES
     public Persona(String nombre, String apellido, int dni, String direccion, int edad, LocalDate f){
         this.nombre=nombre;
         this.apellido=apellido;
@@ -31,6 +31,7 @@ public abstract class Persona {
         this.fNacimiento=f;
     }
 
+    //SIN EDAD
     public Persona(String nombre, String apellido, int dni, String direccion, LocalDate f){
         this.nombre=nombre;
         this.apellido=apellido;
@@ -38,44 +39,64 @@ public abstract class Persona {
         this.direccion=direccion;
         this.fNacimiento=f;
     }
+
+    //NOMBRE, APELLIDO, DIRECCION
+    public Persona(String nombre, String apellido, String direccion){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.direccion=direccion;
+
+    }
+
+    //NOMBRE, APELLIDO, DNI, FECHA N
     public Persona(String nombre, String apellido, int dni,LocalDate f){
         this.nombre=nombre;
         this.apellido=apellido;
         this.dni=dni;
         this.fNacimiento=f;
     }
+
+    //NOMBRE
     public Persona(String nombre){
         this.nombre=nombre;
     }
 
+
+    //NOMBRE, APELLIDO, FECHA N
     public Persona(String nombre, String apellido, LocalDate f){
         this.nombre=nombre;
         this.apellido=apellido;
         this.fNacimiento=f;
     }
 
-
+    //NOMBRE Y APELLIDO
     public Persona(String nombre, String apellido){
         this.nombre=nombre;
         this.apellido=apellido;
     }
 
+
+    //NOMBRE, FECHA N
     public Persona(String nombre, LocalDate f){
         this.nombre=nombre;
         this.fNacimiento=f;
     }
 
-     public Persona(String nombre, String direccion, int edad){
+
+    //NOMBRE, DIRECCION, EDAD
+    public Persona(String nombre, String direccion, int edad){
             this.nombre=nombre;
             this.direccion=direccion;
             this.edad=edad;
-        }
+    }
 
-        public Persona(String nombre, int dni, String apellido){
+
+    //NOMBRE, APELLIDO, DNI
+    public Persona(String nombre, int dni, String apellido){
             this.nombre=nombre;
             this.apellido=apellido;
             this.dni=dni;
-        }
+    }
 
         public String getNombre(){
             return nombre;
