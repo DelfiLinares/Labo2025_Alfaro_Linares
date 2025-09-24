@@ -1,6 +1,8 @@
 package masterchef;
 
-public abstract class Participante extends general.Persona {
+import receta.Plato;
+
+public abstract class Participante extends general.Persona implements aptoCocinar{
     private ColorEquipo equipo;
 
     public Participante(String nombre, String apellido, String direccion, ColorEquipo equipo) {

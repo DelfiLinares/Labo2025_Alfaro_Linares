@@ -2,16 +2,25 @@ package receta;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class platoPrincipal extends Plato{
     LocalTime tiempoCoccion;
     int comensales;
 
+
+    //constructor para receta
     public platoPrincipal(String nombre, Nivel nivel, ArrayList<String> pasos, LocalTime tiempo, int comensales){
         super(nombre, nivel, pasos);
         this.tiempoCoccion=tiempo;
         this.comensales=comensales;
     }
+    //constructor para masterchef
+    public platoPrincipal(String nombre, HashSet<String> ingredientes, int tiempo, int comensales){
+        super(nombre, ingredientes,tiempo);
+        this.comensales=comensales;
+    }
+
     public platoPrincipal(){
         super();
         this.tiempoCoccion=LocalTime.of(2,10,4);

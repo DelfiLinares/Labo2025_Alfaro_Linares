@@ -1,6 +1,7 @@
 package receta;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Postre extends Plato{
     int temperatura;
@@ -8,6 +9,11 @@ public class Postre extends Plato{
 
     public Postre(String nombre, Nivel nivel, ArrayList<String> pasos, int temp, boolean diab){
         super(nombre, nivel, pasos);
+        this.temperatura=temp;
+        this.diabetico=true;
+    }
+    public Postre(String nombre, int temp, boolean diab, HashSet<String> ingredientes, int tiempo){
+        super(nombre, ingredientes,tiempo);
         this.temperatura=temp;
         this.diabetico=true;
     }

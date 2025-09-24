@@ -1,6 +1,7 @@
 package receta;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Entrada extends Plato {
     Temperatura temp;
@@ -9,7 +10,11 @@ public class Entrada extends Plato {
         super(nombre, nivel, pasos);
         this.temp=temp;
     }
-
+    //constructor para masterchef
+    public Entrada(String nombre, HashSet<String> ingredientes, int tiempo, Temperatura temp){
+        super(nombre, ingredientes, tiempo);
+        this.temp=temp;
+    }
     public Entrada(){
         super();
         this.temp=Temperatura.FRIO;
