@@ -21,6 +21,7 @@ public class Experto extends Participante{
     @Override
     public void prepararLugarTrabajo(){
         System.out.println("Perdi 5 minutos preparando la mesa por lo que mi tiempo restante es de "+(minutosCocina-5)+" minutos");
+        minutosCocina=minutosCocina-5;
     }
     @Override//a la interfaz
     public void cocinar(Plato plato) throws NullPointerException {
@@ -29,7 +30,8 @@ public class Experto extends Participante{
                     if(minutosCocina==0){
                         System.out.println("Con esta receta te quedaste sin tiempo disponible");
                     }
-                    System.out.println("Se pudo cocinar el plato");
+                    System.out.println("SE PUDO COCINAR EL PLATO");
+                    System.out.println("Tiempo sobrante:"+minutosCocina);
                 }
                 else{
                     throw new NullPointerException("No tiene el tiempo disponible suficiente");

@@ -29,7 +29,7 @@ public class Intermedio extends Participante{
             String ingredienteAuxiliar=mapAuxiliar.getKey();
             int stockAuxiliar= mapAuxiliar.getValue();
             if(stockAuxiliar>1){
-                System.out.println(ingredienteAuxiliar);
+                System.out.println(ingredienteAuxiliar+", "+stockAuxiliar);
             }
         }
     }
@@ -47,7 +47,7 @@ public class Intermedio extends Participante{
                 }
             }
             if (contador == plato.getIngredientes().size()) {
-                System.out.println("Se pudo cocinar el plato");
+                System.out.println("SE PUDO COCINAR EL PLATO");
             } else {
                 throw new itemNoEncontradoEnHash("No tiene los ingredientes necesarios");
             }

@@ -3,9 +3,12 @@ package masterchef;
 import receta.Entrada;
 import receta.Plato;
 import receta.Temperatura;
+import receta.platoPrincipal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class Principiante extends Participante{
     private HashSet<String>ingredientesProhibidos;
@@ -27,7 +30,7 @@ public class Principiante extends Participante{
     public void prepararLugarTrabajo(){
         System.out.println("Ya guarde todos los elementos prohibidos y no voy a usar:");
         for(String aux:this.ingredientesProhibidos){
-            System.out.print(aux+"-");
+            System.out.println(aux);
         }
     }
     @Override//a la interfaz
@@ -40,7 +43,7 @@ public class Principiante extends Participante{
                 }
             }
             if (contador == plato.getIngredientes().size()) {
-                System.out.println("Se pudo cocinar el plato");
+                System.out.println("SE PUDO COCINAR EL PLATO");
             } else {
                 throw new itemProhibidoEncontrado("Hay ingredientes prohibidos en esta Entrada");
             }
@@ -50,25 +53,4 @@ public class Principiante extends Participante{
         }
     }
 
-    public static void main(String[] args) {
-        Principiante juancito=new Principiante("Juancito","Cito","CitoCito 6578",ColorEquipo.azul,new HashSet<>());
-        juancito.ingredientesProhibidos.add("Tomate");
-        juancito.ingredientesProhibidos.add("Queso");
-
-        Intermedio lucia=new Intermedio("Lucia","Cia","Lulu 2928",ColorEquipo.azul,)
-
-        HashSet<String>ingredientesPalitosQueso=new HashSet<>();
-        ingredientesPalitosQueso.add("Harina");
-        ingredientesPalitosQueso.add("Agua");
-        ingredientesPalitosQueso.add("Sal");
-        ingredientesPalitosQueso.add("Queso");
-        Entrada entrada1=new Entrada("Palitos de Queso",ingredientesPalitosQueso,20, Temperatura.CALIENTE);
-        try{
-            juancito.cocinar(entrada1);
-        }
-        catch(itemProhibidoEncontrado exc){
-            exc.printStackTrace();
-            exc.getMessage();
-        }
-    }
 }
