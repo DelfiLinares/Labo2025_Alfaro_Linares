@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class Principiante extends Participante{
-    private HashSet<String>ingredientesProhibidos;
+public class Principiante extends Participante {
+    private HashSet<String> ingredientesProhibidos;
 
     public Principiante(String nombre, String apellido, String direccion, ColorEquipo equipo, HashSet<String> ingredientesProhibidos) {
         super(nombre, apellido, direccion, equipo);
@@ -27,15 +27,17 @@ public class Principiante extends Participante{
     }
 
     @Override//a la clase padre
-    public void prepararLugarTrabajo(){
+    public void prepararLugarTrabajo() {
         System.out.println("Ya guarde todos los elementos prohibidos y no voy a usar:");
-        for(String aux:this.ingredientesProhibidos){
+        for (String aux : this.ingredientesProhibidos) {
             System.out.println(aux);
         }
     }
+
     @Override//a la interfaz
-    public void cocinar(Plato plato) throws itemProhibidoEncontrado {
-        if(plato instanceof Entrada) {
+    public String cocinar(Plato plato) throws itemProhibidoEncontrado {
+        String mensaje = "NO SE PUDO COCINAR";
+        if (plato instanceof Entrada) {
             int contador = 0;
             for (String ingrediente : plato.getIngredientes()) {
                 if (!this.ingredientesProhibidos.contains(ingrediente)) {
@@ -43,14 +45,14 @@ public class Principiante extends Participante{
                 }
             }
             if (contador == plato.getIngredientes().size()) {
-                System.out.println("SE PUDO COCINAR EL PLATO");
+                mensaje = "Principiante cocinó entrada";
             } else {
                 throw new itemProhibidoEncontrado("Hay ingredientes prohibidos en esta Entrada");
             }
-        }
-        else{
+        } else {
             System.out.println("Los principiantes solo pueden cocinar Entradas");
-        }
-    }
 
+        }
+        return mensaje;
+    }
 }

@@ -34,7 +34,8 @@ public class Intermedio extends Participante{
         }
     }
     @Override//a la interfaz
-    public void cocinar(Plato plato) throws itemNoEncontradoEnHash {
+    public String cocinar(Plato plato) throws itemNoEncontradoEnHash {
+        String mensaje = "NO SE PUDO COCINAR";
         if(plato instanceof platoPrincipal) {
             int contador = 0;
             for (String ingrediente : plato.getIngredientes()) {
@@ -47,7 +48,7 @@ public class Intermedio extends Participante{
                 }
             }
             if (contador == plato.getIngredientes().size()) {
-                System.out.println("SE PUDO COCINAR EL PLATO");
+                mensaje="intermedio cocinó plato principal";
             } else {
                 throw new itemNoEncontradoEnHash("No tiene los ingredientes necesarios");
             }
@@ -55,5 +56,6 @@ public class Intermedio extends Participante{
         else{
             System.out.println("Los principiantes solo pueden cocinar Entradas");
         }
+        return mensaje;
     }
 }
